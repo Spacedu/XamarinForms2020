@@ -1,0 +1,13 @@
+C:\Mobile\AppQuantidade\AppQuantidade\AppQuantidade\bin\Debug\netstandard2.0\AppQuantidade.deps.json
+C:\Mobile\AppQuantidade\AppQuantidade\AppQuantidade\bin\Debug\netstandard2.0\AppQuantidade.dll
+C:\Mobile\AppQuantidade\AppQuantidade\AppQuantidade\bin\Debug\netstandard2.0\ref\AppQuantidade.dll
+C:\Mobile\AppQuantidade\AppQuantidade\AppQuantidade\bin\Debug\netstandard2.0\AppQuantidade.pdb
+C:\Mobile\AppQuantidade\AppQuantidade\AppQuantidade\obj\Debug\netstandard2.0\AppQuantidade.csprojAssemblyReference.cache
+C:\Mobile\AppQuantidade\AppQuantidade\AppQuantidade\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Mobile\AppQuantidade\AppQuantidade\AppQuantidade\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Mobile\AppQuantidade\AppQuantidade\AppQuantidade\obj\Debug\netstandard2.0\AppQuantidade.AssemblyInfoInputs.cache
+C:\Mobile\AppQuantidade\AppQuantidade\AppQuantidade\obj\Debug\netstandard2.0\AppQuantidade.AssemblyInfo.cs
+C:\Mobile\AppQuantidade\AppQuantidade\AppQuantidade\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Mobile\AppQuantidade\AppQuantidade\AppQuantidade\obj\Debug\netstandard2.0\AppQuantidade.dll
+C:\Mobile\AppQuantidade\AppQuantidade\AppQuantidade\obj\Debug\netstandard2.0\ref\AppQuantidade.dll
+C:\Mobile\AppQuantidade\AppQuantidade\AppQuantidade\obj\Debug\netstandard2.0\AppQuantidade.pdb
