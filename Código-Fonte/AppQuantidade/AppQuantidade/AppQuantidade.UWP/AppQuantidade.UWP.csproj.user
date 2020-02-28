@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Source>C:\Dev\AppQuantidade\Material\Icone\Icone.png</Source>
+    <SmallTileSource>C:\Dev\AppQuantidade\Material\Icone\Icone.png</SmallTileSource>
+    <MediumTileSource>C:\Dev\AppQuantidade\Material\Icone\Icone.png</MediumTileSource>
+    <WideTileSource>C:\Dev\AppQuantidade\Material\Icone\Icone.png</WideTileSource>
+    <LargeTileSource>C:\Dev\AppQuantidade\Material\Icone\Icone.png</LargeTileSource>
+    <AppIconSource>C:\Dev\AppQuantidade\Material\Icone\Icone.png</AppIconSource>
+    <SplashScreenSource>C:\Dev\AppQuantidade\Material\Icone\Icone.png</SplashScreenSource>
+    <PackageLogoSource>C:\Dev\AppQuantidade\Material\Icone\Icone.png</PackageLogoSource>
+  </PropertyGroup>
+</Project>
