@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "/qvIF2UTP4r1KEar41Jpr8rdFbIeZEaNorzMvK7zVsBb3IBWswKvAndaE6WuR+fD1zGkFZfieJGhCZwsE69qLQ==",
+  "success": true,
+  "projectFilePath": "C:\\Dev\\AppGallery\\AppGallery\\AppGallery.iOS\\AppGallery.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Elias\\.nuget\\packages\\xamarin.essentials\\1.5.3\\xamarin.essentials.1.5.3.nupkg.sha512",
+    "C:\\Users\\Elias\\.nuget\\packages\\xamarin.forms\\4.6.0.616-pre4\\xamarin.forms.4.6.0.616-pre4.nupkg.sha512",
+    "C:\\Users\\Elias\\.nuget\\packages\\xamarin.forms.visual.material\\4.6.0.616-pre4\\xamarin.forms.visual.material.4.6.0.616-pre4.nupkg.sha512",
+    "C:\\Users\\Elias\\.nuget\\packages\\xamarin.ios.materialcomponents\\92.0.0\\xamarin.ios.materialcomponents.92.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
