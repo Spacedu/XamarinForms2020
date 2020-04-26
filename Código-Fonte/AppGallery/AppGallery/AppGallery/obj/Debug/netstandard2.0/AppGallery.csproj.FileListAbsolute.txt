@@ -81,3 +81,5 @@ C:\Dev\AppGallery\AppGallery\AppGallery\obj\Debug\netstandard2.0\XamarinForms\Es
 C:\Dev\AppGallery\AppGallery\AppGallery\obj\Debug\netstandard2.0\XamarinForms\Estilos\TrocarTema\DarkTheme.xaml.g.cs
 C:\Dev\AppGallery\AppGallery\AppGallery\obj\Debug\netstandard2.0\XamarinForms\Estilos\TrocarTema\LightTheme.xaml.g.cs
 C:\Dev\AppGallery\AppGallery\AppGallery\obj\Debug\netstandard2.0\XamarinForms\Estilos\TrocarTema\Tema.xaml.g.cs
+C:\Dev\AppGallery\AppGallery\AppGallery\obj\Debug\netstandard2.0\XamarinForms\Animacoes\Simples\Simples.xaml.g.cs
+C:\Dev\AppGallery\AppGallery\AppGallery\obj\Debug\netstandard2.0\XamarinForms\Gestos\Gestos.xaml.g.cs

@@ -73,6 +73,12 @@
                     <Button Text="MaterialDesign" Clicked="AbrirMaterialDesign" />
                     <Button Text="Font" Clicked="AbrirFont" />
                     <Button Text="ChangeTheme" Clicked="AbrirChangeTheme" />
+
+                    <Label Text="Animação" />
+                    <Button Text="Simples" Clicked="AbrirSimples" />
+
+                    <Label Text="Gestos" />
+                    <Button Text="Gestos Simples" Clicked="AbrirGestosSimples" />
                 </StackLayout>
             </ScrollView>
         </ContentPage>
