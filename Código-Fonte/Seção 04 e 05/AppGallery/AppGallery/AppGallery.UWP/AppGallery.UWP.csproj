@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{8A50D351-0945-4DB2-B5D0-4999D4BEDA45}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AppGallery.UWP</RootNamespace>
+    <AssemblyName>AppGallery.UWP</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.18362.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.16299.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <AppxPackageSigningEnabled>false</AppxPackageSigningEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BaseUrl_UWP.cs" />
+    <Compile Include="Effects\StatusBarEffect.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="alarm.mp3" />
+    <Content Include="Assets\LargeTile.scale-100.png" />
+    <Content Include="Assets\LargeTile.scale-125.png" />
+    <Content Include="Assets\LargeTile.scale-150.png" />
+    <Content Include="Assets\LargeTile.scale-200.png" />
+    <Content Include="Assets\LargeTile.scale-400.png" />
+    <Content Include="Assets\SmallTile.scale-100.png" />
+    <Content Include="Assets\SmallTile.scale-125.png" />
+    <Content Include="Assets\SmallTile.scale-150.png" />
+    <Content Include="Assets\SmallTile.scale-200.png" />
+    <Content Include="Assets\SmallTile.scale-400.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-125.png" />
+    <Content Include="Assets\SplashScreen.scale-150.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-400.png" />
+    <Content Include="Assets\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\Square150x150Logo.scale-125.png" />
+    <Content Include="Assets\Square150x150Logo.scale-150.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png" />
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-24.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-48.png" />
+    <Content Include="Assets\Square44x44Logo.scale-100.png" />
+    <Content Include="Assets\Square44x44Logo.scale-125.png" />
+    <Content Include="Assets\Square44x44Logo.scale-150.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-125.png" />
+    <Content Include="Assets\StoreLogo.scale-150.png" />
+    <Content Include="Assets\StoreLogo.scale-200.png" />
+    <Content Include="Assets\StoreLogo.scale-400.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-125.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-150.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="foto.jpg" />
+    <Content Include="Imagens\heartclaro.scale-100.png" />
+    <Content Include="Imagens\heartclaro.scale-200.png" />
+    <Content Include="Imagens\heartescuro.scale-100.png" />
+    <Content Include="Imagens\heartescuro.scale-200.png" />
+    <Content Include="Imagens\homeclaro.scale-100.png" />
+    <Content Include="Imagens\homeclaro.scale-200.png" />
+    <Content Include="Imagens\homeescuro.scale-100.png" />
+    <Content Include="Imagens\homeescuro.scale-200.png" />
+    <Content Include="Imagens\logoclaro.scale-100.png" />
+    <Content Include="Imagens\logoclaro.scale-200.png" />
+    <Content Include="Imagens\logoescuro.scale-100.png" />
+    <Content Include="Imagens\logoescuro.scale-200.png" />
+    <Content Include="plane%402x.png" />
+    <Content Include="plane.png" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Site\about.html" />
+    <Content Include="Site\assets\css\animate.min.css" />
+    <Content Include="Site\assets\css\bootstrap.min.css" />
+    <Content Include="Site\assets\css\flaticon.css" />
+    <Content Include="Site\assets\css\fontawesome-all.min.css" />
+    <Content Include="Site\assets\css\gijgo.css" />
+    <Content Include="Site\assets\css\magnific-popup.css" />
+    <Content Include="Site\assets\css\nice-select.css" />
+    <Content Include="Site\assets\css\owl.carousel.min.css" />
+    <Content Include="Site\assets\css\responsive.css" />
+    <Content Include="Site\assets\css\slick.css" />
+    <Content Include="Site\assets\css\slicknav.css" />
+    <Content Include="Site\assets\css\style.css" />
+    <Content Include="Site\assets\css\themify-icons.css" />
+    <Content Include="Site\assets\fonts\fa-brands-400.svg" />
+    <Content Include="Site\assets\fonts\fa-regular-400.svg" />
+    <Content Include="Site\assets\fonts\fa-solid-900.svg" />
+    <Content Include="Site\assets\fonts\flaticon.css" />
+    <Content Include="Site\assets\fonts\Flaticon.svg" />
+    <Content Include="Site\assets\fonts\themify.svg" />
+    <Content Include="Site\assets\img\about\about_lft.png" />
+    <Content Include="Site\assets\img\about\about_right.png" />
+    <Content Include="Site\assets\img\about\pet_care.png" />
+    <Content Include="Site\assets\img\adapt_icon\1.png" />
+    <Content Include="Site\assets\img\adapt_icon\1.svg" />
+    <Content Include="Site\assets\img\adapt_icon\2.png" />
+    <Content Include="Site\assets\img\adapt_icon\3.png" />
+    <Content Include="Site\assets\img\banner\dog.png" />
+    <Content Include="Site\assets\img\banner\img.png" />
+    <Content Include="Site\assets\img\blog\author.png" />
+    <Content Include="Site\assets\img\blog\blog_1.png" />
+    <Content Include="Site\assets\img\blog\blog_2.png" />
+    <Content Include="Site\assets\img\blog\blog_3.png" />
+    <Content Include="Site\assets\img\blog\blog_4.png" />
+    <Content Include="Site\assets\img\blog\learn_about_bg.png" />
+    <Content Include="Site\assets\img\blog\single_blog_1.png" />
+    <Content Include="Site\assets\img\blog\single_blog_2.png" />
+    <Content Include="Site\assets\img\blog\single_blog_3.png" />
+    <Content Include="Site\assets\img\blog\single_blog_4.png" />
+    <Content Include="Site\assets\img\blog\single_blog_5.png" />
+    <Content Include="Site\assets\img\blog\slide_thumb_1.png" />
+    <Content Include="Site\assets\img\comment\comment_1.png" />
+    <Content Include="Site\assets\img\comment\comment_2.png" />
+    <Content Include="Site\assets\img\comment\comment_3.png" />
+    <Content Include="Site\assets\img\elements\a.jpg" />
+    <Content Include="Site\assets\img\elements\a2.jpg" />
+    <Content Include="Site\assets\img\elements\d.jpg" />
+    <Content Include="Site\assets\img\elements\disabled-check.png" />
+    <Content Include="Site\assets\img\elements\disabled-radio.png" />
+    <Content Include="Site\assets\img\elements\f1.jpg" />
+    <Content Include="Site\assets\img\elements\f2.jpg" />
+    <Content Include="Site\assets\img\elements\f3.jpg" />
+    <Content Include="Site\assets\img\elements\f4.jpg" />
+    <Content Include="Site\assets\img\elements\f5.jpg" />
+    <Content Include="Site\assets\img\elements\f6.jpg" />
+    <Content Include="Site\assets\img\elements\f7.jpg" />
+    <Content Include="Site\assets\img\elements\f8.jpg" />
+    <Content Include="Site\assets\img\elements\g1.jpg" />
+    <Content Include="Site\assets\img\elements\g2.jpg" />
+    <Content Include="Site\assets\img\elements\g3.jpg" />
+    <Content Include="Site\assets\img\elements\g4.jpg" />
+    <Content Include="Site\assets\img\elements\g5.jpg" />
+    <Content Include="Site\assets\img\elements\g6.jpg" />
+    <Content Include="Site\assets\img\elements\g7.jpg" />
+    <Content Include="Site\assets\img\elements\g8.jpg" />
+    <Content Include="Site\assets\img\elements\primary-check.png" />
+    <Content Include="Site\assets\img\elements\primary-radio.png" />
+    <Content Include="Site\assets\img\elements\success-check.png" />
+    <Content Include="Site\assets\img\elements\success-radio.png" />
+    <Content Include="Site\assets\img\favicon.ico" />
+    <Content Include="Site\assets\img\gallery\1.png" />
+    <Content Include="Site\assets\img\gallery\2.png" />
+    <Content Include="Site\assets\img\gallery\3.png" />
+    <Content Include="Site\assets\img\hero\about-sharpe2.png" />
+    <Content Include="Site\assets\img\hero\about_hero.jpg" />
+    <Content Include="Site\assets\img\hero\about_hero.png" />
+    <Content Include="Site\assets\img\hero\about_shape1.png" />
+    <Content Include="Site\assets\img\hero\contact_hero.jpg" />
+    <Content Include="Site\assets\img\hero\gallery_hero.jpg" />
+    <Content Include="Site\assets\img\hero\h1_hero.png" />
+    <Content Include="Site\assets\img\hero\hero_right.png" />
+    <Content Include="Site\assets\img\hero\Industries_hero.jpg" />
+    <Content Include="Site\assets\img\hero\services_hero.jpg" />
+    <Content Include="Site\assets\img\logo\logo.png" />
+    <Content Include="Site\assets\img\logo\logo2_footer.png" />
+    <Content Include="Site\assets\img\logo\testimonial.png" />
+    <Content Include="Site\assets\img\offers\1.png" />
+    <Content Include="Site\assets\img\offers\2.png" />
+    <Content Include="Site\assets\img\offers\3.png" />
+    <Content Include="Site\assets\img\our_blog\blog-img1.jpg" />
+    <Content Include="Site\assets\img\post\next.png" />
+    <Content Include="Site\assets\img\post\post_1.png" />
+    <Content Include="Site\assets\img\post\post_10.png" />
+    <Content Include="Site\assets\img\post\post_2.png" />
+    <Content Include="Site\assets\img\post\post_3.png" />
+    <Content Include="Site\assets\img\post\post_4.png" />
+    <Content Include="Site\assets\img\post\post_5.png" />
+    <Content Include="Site\assets\img\post\post_6.png" />
+    <Content Include="Site\assets\img\post\post_7.png" />
+    <Content Include="Site\assets\img\post\post_8.png" />
+    <Content Include="Site\assets\img\post\post_9.png" />
+    <Content Include="Site\assets\img\post\preview.png" />
+    <Content Include="Site\assets\img\prising\1.png" />
+    <Content Include="Site\assets\img\prising\10.png" />
+    <Content Include="Site\assets\img\prising\2.png" />
+    <Content Include="Site\assets\img\prising\3.png" />
+    <Content Include="Site\assets\img\prising\4.png" />
+    <Content Include="Site\assets\img\prising\5.png" />
+    <Content Include="Site\assets\img\prising\6.png" />
+    <Content Include="Site\assets\img\prising\7.png" />
+    <Content Include="Site\assets\img\prising\8.png" />
+    <Content Include="Site\assets\img\prising\9.png" />
+    <Content Include="Site\assets\img\service\1.png" />
+    <Content Include="Site\assets\img\service\2.png" />
+    <Content Include="Site\assets\img\service\3.png" />
+    <Content Include="Site\assets\img\service\service_icon_1.png" />
+    <Content Include="Site\assets\img\service\service_icon_2.png" />
+    <Content Include="Site\assets\img\service\service_icon_3.png" />
+    <Content Include="Site\assets\img\service\service_icon_bg_1.png" />
+    <Content Include="Site\assets\img\service\we-create.png" />
+    <Content Include="Site\assets\img\shape\choose_your.png" />
+    <Content Include="Site\assets\img\shape\footer_bg.png" />
+    <Content Include="Site\assets\img\shape\plus1.png" />
+    <Content Include="Site\assets\img\shape\plus2.png" />
+    <Content Include="Site\assets\img\shape\plus3.png" />
+    <Content Include="Site\assets\img\shape\plus4.png" />
+    <Content Include="Site\assets\img\shape\tips.png" />
+    <Content Include="Site\assets\img\shape\we-create_bg.png" />
+    <Content Include="Site\assets\img\shape\we_create_right.png" />
+    <Content Include="Site\assets\img\shape\what_do.png" />
+    <Content Include="Site\assets\img\shape\what_do_right.png" />
+    <Content Include="Site\assets\img\team\1.png" />
+    <Content Include="Site\assets\img\team\2.png" />
+    <Content Include="Site\assets\img\team\3.png" />
+    <Content Include="Site\assets\img\team\have.jpg" />
+    <Content Include="Site\assets\img\testmonial\1.png" />
+    <Content Include="Site\assets\img\testmonial\testimonial.png" />
+    <Content Include="Site\assets\img\tips\tips_1.jpg" />
+    <Content Include="Site\assets\img\tips\tips_1.png" />
+    <Content Include="Site\assets\img\tips\tips_2.jpg" />
+    <Content Include="Site\assets\img\tips\tips_3.jpg" />
+    <Content Include="Site\assets\img\visit\visit_1.jpg" />
+    <Content Include="Site\assets\img\visit\visit_2.jpg" />
+    <Content Include="Site\assets\img\visit\visit_3.jpg" />
+    <Content Include="Site\assets\img\visit\visit_4.jpg" />
+    <Content Include="Site\assets\js\animated.headline.js" />
+    <Content Include="Site\assets\js\bootstrap.min.js" />
+    <Content Include="Site\assets\js\contact.js" />
+    <Content Include="Site\assets\js\gijgo.min.js" />
+    <Content Include="Site\assets\js\jquery.ajaxchimp.min.js" />
+    <Content Include="Site\assets\js\jquery.form.js" />
+    <Content Include="Site\assets\js\jquery.magnific-popup.js" />
+    <Content Include="Site\assets\js\jquery.nice-select.min.js" />
+    <Content Include="Site\assets\js\jquery.paroller.min.js" />
+    <Content Include="Site\assets\js\jquery.scrollUp.min.js" />
+    <Content Include="Site\assets\js\jquery.slicknav.min.js" />
+    <Content Include="Site\assets\js\jquery.sticky.js" />
+    <Content Include="Site\assets\js\jquery.validate.min.js" />
+    <Content Include="Site\assets\js\mail-script.js" />
+    <Content Include="Site\assets\js\main.js" />
+    <Content Include="Site\assets\js\one-page-nav-min.js" />
+    <Content Include="Site\assets\js\owl.carousel.min.js" />
+    <Content Include="Site\assets\js\plugins.js" />
+    <Content Include="Site\assets\js\popper.min.js" />
+    <Content Include="Site\assets\js\slick.min.js" />
+    <Content Include="Site\assets\js\vendor\jquery-1.12.4.min.js" />
+    <Content Include="Site\assets\js\vendor\modernizr-3.5.0.min.js" />
+    <Content Include="Site\assets\js\wow.min.js" />
+    <Content Include="Site\blog.html" />
+    <Content Include="Site\contact.html" />
+    <Content Include="Site\elements.html" />
+    <Content Include="Site\index.html" />
+    <Content Include="Site\main.html" />
+    <Content Include="Site\services.html" />
+    <Content Include="Site\single-blog.html" />
+    <Content Include="spacedu.mp4" />
+    <Content Include="xamarin.scale-100.png" />
+    <Content Include="xamarin.scale-200.png" />
+    <Content Include="xamarin.scale-400.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="LeoJHarris.XForms.Plugin.EnhancedEntry">
+      <Version>1.0.6</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms" Version="4.6.0.726" />
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.10" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.1" />
+    <PackageReference Include="Xamarin.Forms.Visual.Material">
+      <Version>4.6.0.726</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AppGallery\AppGallery.csproj">
+      <Project>{DD934EA5-BC09-4D88-B419-1D705014A2A9}</Project>
+      <Name>AppGallery</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Site\assets\css\style.map" />
+    <None Include="Site\assets\fonts\fa-brands-400.eot" />
+    <Content Include="Site\assets\fonts\fa-brands-400.ttf" />
+    <None Include="Site\assets\fonts\fa-brands-400.woff" />
+    <None Include="Site\assets\fonts\fa-brands-400.woff2" />
+    <None Include="Site\assets\fonts\fa-regular-400.eot" />
+    <Content Include="Site\assets\fonts\fa-regular-400.ttf" />
+    <None Include="Site\assets\fonts\fa-regular-400.woff" />
+    <None Include="Site\assets\fonts\fa-regular-400.woff2" />
+    <None Include="Site\assets\fonts\fa-solid-900.eot" />
+    <Content Include="Site\assets\fonts\fa-solid-900.ttf" />
+    <None Include="Site\assets\fonts\fa-solid-900.woff" />
+    <None Include="Site\assets\fonts\fa-solid-900.woff2" />
+    <None Include="Site\assets\fonts\Flaticon.eot" />
+    <Content Include="Site\assets\fonts\Flaticon.ttf" />
+    <None Include="Site\assets\fonts\Flaticon.woff" />
+    <None Include="Site\assets\fonts\Flaticon.woff2" />
+    <None Include="Site\assets\fonts\themify.eot" />
+    <Content Include="Site\assets\fonts\themify.ttf" />
+    <None Include="Site\assets\fonts\themify.woff" />
+    <None Include="Site\assets\scss\style.scss" />
+    <None Include="Site\assets\scss\_blog.scss" />
+    <None Include="Site\assets\scss\_blog_page.scss" />
+    <None Include="Site\assets\scss\_bradcam.scss" />
+    <None Include="Site\assets\scss\_chooseBest.scss" />
+    <None Include="Site\assets\scss\_color.scss" />
+    <None Include="Site\assets\scss\_common.scss" />
+    <None Include="Site\assets\scss\_contact.scss" />
+    <None Include="Site\assets\scss\_david-droga.scss" />
+    <None Include="Site\assets\scss\_elements.scss" />
+    <None Include="Site\assets\scss\_extend.scss" />
+    <None Include="Site\assets\scss\_footer.scss" />
+    <None Include="Site\assets\scss\_generating-area.scss" />
+    <None Include="Site\assets\scss\_h1-hero.scss" />
+    <None Include="Site\assets\scss\_haveProject.scss" />
+    <None Include="Site\assets\scss\_headerMenu.scss" />
+    <None Include="Site\assets\scss\_mixins.scss" />
+    <None Include="Site\assets\scss\_overlay.scss" />
+    <None Include="Site\assets\scss\_recent.scss" />
+    <None Include="Site\assets\scss\_requestBack.scss" />
+    <None Include="Site\assets\scss\_services.scss" />
+    <None Include="Site\assets\scss\_services_section.scss" />
+    <None Include="Site\assets\scss\_team.scss" />
+    <None Include="Site\assets\scss\_testimonial.scss" />
+    <None Include="Site\assets\scss\_tips.scss" />
+    <None Include="Site\assets\scss\_variables.scss" />
+    <None Include="Site\assets\scss\_visit-area.scss" />
+    <None Include="Site\assets\scss\_we-trusted.scss" />
+    <None Include="Site\assets\scss\_weCreate.scss" />
+    <None Include="Site\assets\scss\_what-we-do.scss" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <SDKReference Include="WindowsMobile, Version=10.0.18362.0">
+      <Name>Windows Mobile Extensions for the UWP</Name>
+    </SDKReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+</Project>

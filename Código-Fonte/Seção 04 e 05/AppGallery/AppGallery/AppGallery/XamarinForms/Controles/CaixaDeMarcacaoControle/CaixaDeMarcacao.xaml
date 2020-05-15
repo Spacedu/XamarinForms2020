@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="Checkbox"
+             Padding="10"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Controles.CaixaDeMarcacaoControle.CaixaDeMarcacao">
+    <ContentPage.Content>
+        <StackLayout>
+            <controls:SubtitleComponentView Properties="IsChecked, Color">
+                <controls:SubtitleComponentView.Component>
+                    <CheckBox IsChecked="True" Color="Blue" />
+                </controls:SubtitleComponentView.Component>
+            </controls:SubtitleComponentView>
+
+            <controls:SubtitleComponentView Events="CheckedChanged">
+                <controls:SubtitleComponentView.Component>
+                    <StackLayout>
+                        <CheckBox CheckedChanged="CheckBox_CheckedChanged" />
+                        <Label x:Name="LblInformativo" />
+                    </StackLayout>
+                </controls:SubtitleComponentView.Component>
+            </controls:SubtitleComponentView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Name="myComponent"
+             BindingContext="{x:Reference myComponent}"
+             mc:Ignorable="d"
+             x:Class="AppGallery.Resources.Controls.SubtitleComponentView">
+  <ContentView.Content>
+        <Frame Margin="10" CornerRadius="0" BackgroundColor="{DynamicResource SearchEntryBackgroundColor}" BorderColor="{StaticResource SearchButtonBorderColor}">
+            <StackLayout x:Name="myContainer">
+                <Label Text="Propriedade(s)" x:Name="LblProperties" Style="{DynamicResource SubtitleCredits}" />
+                <Label Text="{Binding Properties}" x:Name="LblPropertiesValue" />
+
+                <Label Text="Evento(s)" x:Name="LblEvents" Style="{DynamicResource SubtitleCredits}" />
+                <Label Text="{Binding Events}" x:Name="LblEventsValue" />
+
+                <Label Text="Método(s)" x:Name="LblMethods" Style="{DynamicResource SubtitleCredits}" />
+                <Label Text="{Binding Methods}" x:Name="LblMethodsValue"/>
+
+                <Label Text="Observação" x:Name="LblObservation" Style="{DynamicResource SubtitleCredits}" />
+                <Label Text="{Binding Observation}" x:Name="LblObservationValue" />
+            </StackLayout>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

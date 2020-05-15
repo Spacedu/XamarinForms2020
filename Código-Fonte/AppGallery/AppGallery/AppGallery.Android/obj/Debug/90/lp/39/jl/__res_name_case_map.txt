@@ -1,9 +1,0 @@
-color-v23/white_disabled_material.xml;color-v23/white_disabled_material.xml
-color/white_disabled_material.xml;color/white_disabled_material.xml
-drawable-v24/MaterialActivityIndicatorBackground.xml;drawable-v24/materialactivityindicatorbackground.xml
-drawable/MaterialActivityIndicatorBackground.xml;drawable/materialactivityindicatorbackground.xml
-drawable/MaterialProgressBar.xml;drawable/materialprogressbar.xml
-Layout/MaterialPickerTextInput.axml;layout/materialpickertextinput.xml
-Layout/TextInputLayoutFilledBox.axml;layout/textinputlayoutfilledbox.xml
-values-v21/styles.xml;values-v21/styles.xml
-values/styles.xml;values/styles.xml

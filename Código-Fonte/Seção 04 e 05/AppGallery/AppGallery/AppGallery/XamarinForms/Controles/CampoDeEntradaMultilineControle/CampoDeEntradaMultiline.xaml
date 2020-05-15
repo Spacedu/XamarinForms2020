@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="Editor"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Controles.CampoDeEntradaMultilineControle.CampoDeEntradaMultiline">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <controls:SubtitleComponentView Properties="Text, TextColor">
+                    <controls:SubtitleComponentView.Component>
+                        <Editor Text="Texto simples" TextColor="Blue" />
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="Placeholder, PlaceholderColor">
+                    <controls:SubtitleComponentView.Component>
+                        <Editor Placeholder="Digite o seu nome" PlaceholderColor="LightBlue" />
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="MaxLength, BackgroundColor">
+                    <controls:SubtitleComponentView.Component>
+                        <Editor MaxLength="10" BackgroundColor="LightBlue" />
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="IsReadOnly">
+                    <controls:SubtitleComponentView.Component>
+                        <Editor Text="123456" IsReadOnly="True" />
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="CharaterSpacing">
+                    <controls:SubtitleComponentView.Component>
+                        <Editor CharacterSpacing="5"/>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="FontFamily, FontSize, FontAttributes">
+                    <controls:SubtitleComponentView.Component>
+                        <Editor FontFamily="sans-serif-thin" FontSize="32" FontAttributes="Italic" />
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="IsSpellCheckEnabled, IsTextPredictionEnabled">
+                    <controls:SubtitleComponentView.Component>
+                        <Editor IsSpellCheckEnabled="True" IsTextPredictionEnabled="True" />
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="Keyboard, KeyboardFlags">
+                    <controls:SubtitleComponentView.Component>
+                        <Editor Keyboard="Email">
+                            <Entry.Keyboard>
+                                <Keyboard x:FactoryMethod="Create">
+                                    <x:Arguments>
+                                        <KeyboardFlags>Suggestions,Spellcheck,CapitalizeCharacter</KeyboardFlags>
+                                    </x:Arguments>
+                                </Keyboard>
+                            </Entry.Keyboard>
+                        </Editor>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Events="Focused, Unfocused, TextChanged, Completed">
+                    <controls:SubtitleComponentView.Component>
+                        <StackLayout>
+                            <Editor HeightRequest="200" Focused="Entry_Focused" Unfocused="Entry_Unfocused" TextChanged="Entry_TextChanged" Completed="Entry_Completed"/>
+                            <Label x:Name="lblFocus" Text="-"/>
+                            <Label x:Name="lblUnfocus" Text="-"/>
+                            <Label x:Name="lblTextchange" Text="-"/>
+                            <Label x:Name="lblComplete" Text="-"/>
+                        </StackLayout>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

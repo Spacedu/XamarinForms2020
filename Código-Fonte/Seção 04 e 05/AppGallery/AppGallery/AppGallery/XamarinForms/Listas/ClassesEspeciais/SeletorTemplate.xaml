@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:template="clr-namespace:AppGallery.XamarinForms.Listas.ClassesEspeciais"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="DataTemplateSelector"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Listas.ClassesEspeciais.SeletorTemplate">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="MerceariaDataTemplate">
+                    <ViewCell>
+                        <StackLayout Padding="10" BackgroundColor="#FFDCF1FF">
+                            <Label Text="{Binding Nome}" FontAttributes="Bold" />
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="R$ "></Span>
+                                        <Span Text="{Binding Valor}"></Span>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+                    
+                <DataTemplate x:Key="FeiraDataTemplate">
+                    <ViewCell>
+                        <StackLayout Padding="10" BackgroundColor="#FFFFFCDC">
+                            <Label Text="{Binding Nome}" FontAttributes="Bold" />
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="R$ "></Span>
+                                        <Span Text="{Binding Valor}"></Span>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+
+
+                <DataTemplate x:Key="AcougueDataTemplate">
+                    <ViewCell>
+                        <StackLayout Padding="10" BackgroundColor="#FFC3C3">
+                            <Label Text="{Binding Nome}" FontAttributes="Bold" />
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="R$ "></Span>
+                                        <Span Text="{Binding Valor}"></Span>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+
+            <template:SetorDataTemplateSelector x:Key="SetorDataTemplateSelector"
+                                                MerceariaTemplate="{StaticResource MerceariaDataTemplate}"
+                                                FeiraTemplate="{StaticResource FeiraDataTemplate}"
+                                                AcougueTemplate="{StaticResource AcougueDataTemplate}"
+                                                />
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout Spacing="0">
+            <controls:TitleComponentView Name="DataTemplateSelector" />
+            <Label Text="Lista de compras" Padding="10" BackgroundColor="#F0706C" TextColor="White" FontAttributes="Bold" FontSize="16" />
+
+            <ListView x:Name="Lista01" HasUnevenRows="True" ItemTemplate="{StaticResource SetorDataTemplateSelector}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

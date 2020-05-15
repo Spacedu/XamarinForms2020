@@ -1,0 +1,485 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{33E0A005-5E50-4E06-A590-7FC5D8717952}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>AppGallery.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>AppGallery.iOS</AssemblyName>
+    <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARM64</MtouchArch>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>None</MtouchLink>
+    <MtouchInterpreter>-all</MtouchInterpreter>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARM64</MtouchArch>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="BaseUrl_iOS.cs" />
+    <Compile Include="Effects\StatusBarEffect.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <None Include="Entitlements.plist" />
+    <None Include="Info.plist" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <BundleResource Include="Resources\assets\css\style.map" />
+    <BundleResource Include="Resources\assets\fonts\fa-brands-400.eot" />
+    <BundleResource Include="Resources\assets\fonts\fa-brands-400.ttf" />
+    <BundleResource Include="Resources\assets\fonts\fa-brands-400.woff" />
+    <BundleResource Include="Resources\assets\fonts\fa-brands-400.woff2" />
+    <BundleResource Include="Resources\assets\fonts\fa-regular-400.eot" />
+    <BundleResource Include="Resources\assets\fonts\fa-regular-400.ttf" />
+    <BundleResource Include="Resources\assets\fonts\fa-regular-400.woff" />
+    <BundleResource Include="Resources\assets\fonts\fa-regular-400.woff2" />
+    <BundleResource Include="Resources\assets\fonts\fa-solid-900.eot" />
+    <BundleResource Include="Resources\assets\fonts\fa-solid-900.ttf" />
+    <BundleResource Include="Resources\assets\fonts\fa-solid-900.woff" />
+    <BundleResource Include="Resources\assets\fonts\fa-solid-900.woff2" />
+    <BundleResource Include="Resources\assets\fonts\Flaticon.eot" />
+    <BundleResource Include="Resources\assets\fonts\Flaticon.ttf" />
+    <BundleResource Include="Resources\assets\fonts\Flaticon.woff" />
+    <BundleResource Include="Resources\assets\fonts\Flaticon.woff2" />
+    <BundleResource Include="Resources\assets\fonts\themify.eot" />
+    <BundleResource Include="Resources\assets\fonts\themify.ttf" />
+    <BundleResource Include="Resources\assets\fonts\themify.woff" />
+    <BundleResource Include="Resources\assets\scss\_blog.scss" />
+    <BundleResource Include="Resources\assets\scss\_blog_page.scss" />
+    <BundleResource Include="Resources\assets\scss\_bradcam.scss" />
+    <BundleResource Include="Resources\assets\scss\_chooseBest.scss" />
+    <BundleResource Include="Resources\assets\scss\_color.scss" />
+    <BundleResource Include="Resources\assets\scss\_common.scss" />
+    <BundleResource Include="Resources\assets\scss\_contact.scss" />
+    <BundleResource Include="Resources\assets\scss\_david-droga.scss" />
+    <BundleResource Include="Resources\assets\scss\_elements.scss" />
+    <BundleResource Include="Resources\assets\scss\_extend.scss" />
+    <BundleResource Include="Resources\assets\scss\_footer.scss" />
+    <BundleResource Include="Resources\assets\scss\_generating-area.scss" />
+    <BundleResource Include="Resources\assets\scss\_h1-hero.scss" />
+    <BundleResource Include="Resources\assets\scss\_haveProject.scss" />
+    <BundleResource Include="Resources\assets\scss\_headerMenu.scss" />
+    <BundleResource Include="Resources\assets\scss\_mixins.scss" />
+    <BundleResource Include="Resources\assets\scss\_overlay.scss" />
+    <BundleResource Include="Resources\assets\scss\_recent.scss" />
+    <BundleResource Include="Resources\assets\scss\_requestBack.scss" />
+    <BundleResource Include="Resources\assets\scss\_services.scss" />
+    <BundleResource Include="Resources\assets\scss\_services_section.scss" />
+    <BundleResource Include="Resources\assets\scss\_team.scss" />
+    <BundleResource Include="Resources\assets\scss\_testimonial.scss" />
+    <BundleResource Include="Resources\assets\scss\_tips.scss" />
+    <BundleResource Include="Resources\assets\scss\_variables.scss" />
+    <BundleResource Include="Resources\assets\scss\_visit-area.scss" />
+    <BundleResource Include="Resources\assets\scss\_we-trusted.scss" />
+    <BundleResource Include="Resources\assets\scss\_weCreate.scss" />
+    <BundleResource Include="Resources\assets\scss\_what-we-do.scss" />
+    <BundleResource Include="Resources\assets\scss\style.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\heartclaro.imageset\heartclaro.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\heartclaro.imageset\heartclaro@2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\heartclaro.imageset\heartclaro@3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\heartescuro.imageset\heartescuro.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\heartescuro.imageset\heartescuro@2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\heartescuro.imageset\heartescuro@3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\homeclaro.imageset\homeclaro.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\homeclaro.imageset\homeclaro@2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\homeclaro.imageset\homeclaro@3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\homeescuro.imageset\homeescuro.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\homeescuro.imageset\homeescuro@2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\homeescuro.imageset\homeescuro@3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Icone.appiconset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Icone.appiconset\Icon-App-20x20@1x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Icone.appiconset\Icon-App-20x20@2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Icone.appiconset\Icon-App-20x20@2x1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Icone.appiconset\Icon-App-20x20@3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Icone.appiconset\Icon-App-29x29@1x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Icone.appiconset\Icon-App-29x29@2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Icone.appiconset\Icon-App-29x29@2x1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Icone.appiconset\Icon-App-29x29@3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Icone.appiconset\Icon-App-40x40@1x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Icone.appiconset\Icon-App-40x40@2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Icone.appiconset\Icon-App-40x40@2x1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Icone.appiconset\Icon-App-40x40@3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Icone.appiconset\Icon-App-60x60@2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Icone.appiconset\Icon-App-60x60@3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Icone.appiconset\Icon-App-76x76@1x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Icone.appiconset\Icon-App-76x76@2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Icone.appiconset\Icon-App-83.5x83.5@2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Icone.appiconset\ItunesArtwork@2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\heartclaro.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\homeclaro.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\heartescuro.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\homeescuro.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\logoescuro.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\logoclaro.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\logoclaro.imageset\logoclaro.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\logoclaro.imageset\logoclaro@2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\logoclaro.imageset\logoclaro@3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\logoescuro.imageset\logoescuro.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\logoescuro.imageset\logoescuro@2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\logoescuro.imageset\logoescuro@3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\xamarin.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Logo.imageset\logo.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Logo.imageset\logo@2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Logo.imageset\logo@3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LogoTexto.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Logo.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LogoTexto.imageset\logotexto.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LogoTexto.imageset\logotexto@2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LogoTexto.imageset\logotexto@3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\xamarin.imageset\xamarin.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\xamarin.imageset\xamarin@2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\xamarin.imageset\xamarin@3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="LeoJHarris.XForms.Plugin.EnhancedEntry">
+      <Version>1.0.6</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms" Version="4.6.0.726" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.1" />
+    <PackageReference Include="Xamarin.Forms.Visual.Material">
+      <Version>4.6.0.726</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\AppGallery\AppGallery.csproj">
+      <Project>{DD934EA5-BC09-4D88-B419-1D705014A2A9}</Project>
+      <Name>AppGallery</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\plane.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\plane%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\plane%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\about.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\blog.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\contact.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\elements.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\main.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\services.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\single-blog.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\css\animate.min.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\css\bootstrap.min.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\css\flaticon.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\css\fontawesome-all.min.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\css\gijgo.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\css\magnific-popup.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\css\nice-select.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\css\owl.carousel.min.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\css\responsive.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\css\slick.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\css\slicknav.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\css\style.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\css\themify-icons.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\fonts\fa-brands-400.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\fonts\fa-regular-400.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\fonts\fa-solid-900.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\fonts\flaticon.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\fonts\Flaticon.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\fonts\themify.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\js\animated.headline.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\js\bootstrap.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\js\contact.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\js\gijgo.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\js\jquery.ajaxchimp.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\js\jquery.form.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\js\jquery.magnific-popup.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\js\jquery.nice-select.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\js\jquery.paroller.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\js\jquery.scrollUp.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\js\jquery.slicknav.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\js\jquery.sticky.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\js\jquery.validate.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\js\mail-script.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\js\main.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\js\one-page-nav-min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\js\owl.carousel.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\js\plugins.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\js\popper.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\js\slick.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\js\wow.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\js\vendor\jquery-1.12.4.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assets\js\vendor\modernizr-3.5.0.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\spacedu.mp4" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\alarm.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\foto.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+</Project>

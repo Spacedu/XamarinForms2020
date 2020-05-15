@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="Animation"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Animacoes.Simples.Simples">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <controls:TitleComponentView Name="Animation" />
+                <BoxView x:Name="Box" WidthRequest="100" HeightRequest="100" CornerRadius="5" BackgroundColor="Accent" Opacity="1" TranslationX="0" TranslationY="0" Rotation="0" RotationX="0"  RotationY="0" Scale="1" ScaleY="1" ScaleX="1" HorizontalOptions="Center" VerticalOptions="Center" />
+
+                <StackLayout VerticalOptions="EndAndExpand">
+                    <Button Text="Animação combinada" Clicked="BtnAnimacaoCombinada" />
+                    <Button Text="Animação personalizada" Clicked="BtnAnimacaoPersonalizada" />
+                    <FlexLayout Direction="Row">
+                        <Entry x:Name="TxtColor" Placeholder="Hex" FlexLayout.Grow="1" />
+                        <Button Text="Color" Clicked="BtnColor" />
+                        <Button Text="Cancelar" WidthRequest="120" Clicked="BtnCancelar"/>
+                    </FlexLayout>
+                
+                    <Button Text="Translate" Clicked="BtnTranslate" />
+                    <Button Text="Rotate" Clicked="BtnRotate" />
+                    <Button Text="Scale" Clicked="BtnScale"/>
+                    <Button Text="Opacity" Clicked="BtnOpacity" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

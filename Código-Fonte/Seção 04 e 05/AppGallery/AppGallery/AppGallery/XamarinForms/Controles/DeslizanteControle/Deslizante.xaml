@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="Slider"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Controles.DeslizanteControle.Deslizante">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <controls:SubtitleComponentView Properties="Minimum, Maximum, Value">
+                    <controls:SubtitleComponentView.Component>
+                        <Slider Minimum="0" Maximum="5" Value="3" MinimumTrackColor="Gray" MaximumTrackColor="Gray" ThumbColor="Accent" />
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="MinimumTrackColor, MaximumTrackColor, ThumbColor">
+                    <controls:SubtitleComponentView.Component>
+                        <Slider MinimumTrackColor="Green" MaximumTrackColor="Green" ThumbColor="Green" />
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="ThumbImageSource">
+                    <controls:SubtitleComponentView.Component>
+                        <Slider MinimumTrackColor="Gray" MaximumTrackColor="Gray" ThumbColor="Gray" ThumbImageSource="plane.png" />
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Events="ValueChanged, DragStarted, DragCompleted">
+                    <controls:SubtitleComponentView.Component>
+                        <Slider MinimumTrackColor="Gray" MaximumTrackColor="Gray" ThumbColor="Gray" 
+                            ValueChanged="Slider_ValueChanged"
+                            DragStarted="Slider_DragStarted"
+                            DragCompleted="Slider_DragCompleted"
+                        />
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Events="ValueChanged, DragStarted, DragCompleted">
+                    <controls:SubtitleComponentView.Component>
+                        <StackLayout>
+                            <Slider MinimumTrackColor="Gray" MaximumTrackColor="Gray" ThumbColor="Gray" 
+                                ValueChanged="Slider_ValueChanged"
+                                DragStarted="Slider_DragStarted"
+                                DragCompleted="Slider_DragCompleted"
+                            />
+                            <Label x:Name="ValueChanged" Text="-" />
+                            <Label x:Name="DragStarted" Text="-" />
+                            <Label x:Name="DragCompleted" Text="-"/>
+                        </StackLayout>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Observation="Dica (Incremento)">
+                    <controls:SubtitleComponentView.Component>
+                        <StackLayout>
+                            <Slider MinimumTrackColor="Gray" MaximumTrackColor="Gray" ThumbColor="Gray"
+                                    Minimum="0"
+                                    Maximum="25"
+                                    ValueChanged="Slider_ValueChanged_Step"
+                            />
+
+                            <Label x:Name="ValueChangedStep" />
+                        </StackLayout>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="Button"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Controles.BotaoControle.Botao">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10" Spacing="0">
+                <controls:SubtitleComponentView Properties="TextColor, BackgroundColor, CornerRadius">
+                    <controls:SubtitleComponentView.Component>
+                        <Button Text="Botão 01" TextColor="White" BackgroundColor="Black" CornerRadius="30" />
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="BorderWidth, BorderColor">
+                    <controls:SubtitleComponentView.Component>
+                        <Button Text="Botão 02" BackgroundColor="White" BorderWidth="5" BorderColor="Black" CornerRadius="30"/>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="FontFamily, FontSize, FontAttributes, Padding">
+                    <controls:SubtitleComponentView.Component>
+                        <Button Text="Botão 03" FontFamily="sans-serif-light" FontSize="Title" FontAttributes="Italic" BackgroundColor="Black" TextColor="White" CornerRadius="60" HorizontalOptions="Center" Padding="30, 10"/>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="ImageSource, ContentLayout">
+                    <controls:SubtitleComponentView.Component>
+                        <Button Text="Botão 04" ImageSource="plane.png" ContentLayout="Right, 50" Padding="30, 10" HorizontalOptions="Center" FontSize="24" BackgroundColor="White" BorderColor="Black" BorderWidth="2" CornerRadius="50" TextColor="Black"/>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="CharacterSpacing, Margin">
+                    <controls:SubtitleComponentView.Component>
+                        <Button Text="Botão 05" BackgroundColor="BlueViolet" CharacterSpacing="2" Margin="0, 30, 0, 1"/>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="VisualStateManager">
+                    <controls:SubtitleComponentView.Component>
+                        <Button Text="Botão 06">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="White" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="Gray" />
+                                            <Setter Property="BorderColor" Value="Black" />
+                                            <Setter Property="BorderWidth" Value="2" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </Button>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Events="Pressed, Released, Clicked">
+                    <controls:SubtitleComponentView.Component>
+                        <StackLayout>
+                            <Button Text="Botão 07" Pressed="Pressionado" Released="Liberado" Clicked="Clicado" />
+                            <Label Text="-" x:Name="LblPressionado" />
+                            <Label Text="-" x:Name="LblLiberado" />
+                            <Label Text="-" x:Name="LblClicado" />
+                        </StackLayout>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

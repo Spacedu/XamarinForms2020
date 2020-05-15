@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             Title="ContentView"
+             mc:Ignorable="d"
+             xmlns:controle="clr-namespace:AppGallery.XamarinForms.Leiautes.ControleLeiaute"
+             x:Class="AppGallery.XamarinForms.Leiautes.ControleLeiaute.Controle">
+    <ContentPage.Content>
+        <StackLayout>
+            <controle:CardHorizontal Titulo="Not 01" Texto="Texto 01" Cor="Gray"/>
+            <controle:CardHorizontal Titulo="Not 02" Texto="Texto 02" Cor="Gray"/>
+            <controle:CardHorizontal Titulo="Not 03" Texto="Texto 03" Cor="#202020"/>
+            <controle:CardDiretor Nome="Stiven Spielberg" Descricao="Autor de filmes renomados" BoxViewColor="Blue" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="INotifyPropertyChanged"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Listas.ClassesEspeciais.NotificarMundacaPropriedade">
+    <ContentPage.Content>
+        <StackLayout>
+            <controls:TitleComponentView Name="INotifyPropertyChanged" />
+            
+            <Frame Padding="10" Margin="10" BorderColor="Gray">
+                <StackLayout>
+                    <Entry x:Name="Nome" Placeholder="Nome" />
+                    <Entry x:Name="Motor" Placeholder="Motor" />
+                    <Button Text="Salvar" Clicked="BtnSalvar" />
+                </StackLayout>
+            </Frame>
+
+            <ListView x:Name="Lista01">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Nome}" Detail="{Binding Motor}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

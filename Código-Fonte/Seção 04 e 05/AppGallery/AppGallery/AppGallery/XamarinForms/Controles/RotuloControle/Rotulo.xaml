@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="Label"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Controles.RotuloControle.Rotulo">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10">
+                <controls:SubtitleComponentView Properties="FontFamily, FontSize, FontAttributes">
+                    <controls:SubtitleComponentView.Component>
+                        <Label Text="Texto 01" FontFamily="sans-serif-condensed" FontSize="24" FontAttributes="Italic" />
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="HorizontalTextAlign, VerticalTextAlign">
+                    <controls:SubtitleComponentView.Component>
+                        <StackLayout>
+                            <Label Text="Texto 01" BackgroundColor="Black" TextColor="White" HorizontalTextAlignment="Center" HeightRequest="60" WidthRequest="100" HorizontalOptions="Start" />
+                            <Label Text="Texto 02" BackgroundColor="Black" TextColor="White" VerticalTextAlignment="Center" HeightRequest="60" WidthRequest="100" HorizontalOptions="Start" />
+                        </StackLayout>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="TextType">
+                    <controls:SubtitleComponentView.Component>
+                        <StackLayout>
+                            <Label Text="Texto &lt;strong&gt;01&lt;/strong&gt;" TextType="Html"/>
+                            <Label TextType="Html">
+                                <![CDATA[
+                                    Texto <strong><i>02</i></strong>
+                                ]]>
+                            </Label>
+                        </StackLayout>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="FormattedText">
+                    <controls:SubtitleComponentView.Component>
+                        <Label>
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Texto " TextColor="Green" FontSize="8" />
+                                    <Span Text="01" TextColor="Red" FontSize="24" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+
+                <controls:SubtitleComponentView Properties="TextColor">
+                    <controls:SubtitleComponentView.Component>
+                        <StackLayout>
+                            <Label Text="Texto 01" TextColor="#FF0000" />
+                            <Label Text="Texto 02" TextColor="#7FFF0000"/>
+                        </StackLayout>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="TextDecorations">
+                    <controls:SubtitleComponentView.Component>
+                        <StackLayout>
+                            <Label Text="Texto 01" TextDecorations="Strikethrough"/>
+                            <Label Text="Texto 02" TextDecorations="Underline"/>
+                        </StackLayout>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="CharacterSpacing">
+                    <controls:SubtitleComponentView.Component>
+                        <StackLayout>
+                            <Label Text="Texto 01" CharacterSpacing="-2" />
+                            <Label Text="Texto 02" CharacterSpacing="5"/>
+                        </StackLayout>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="LineHeight">
+                    <controls:SubtitleComponentView.Component>
+                        <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut volutpat nulla. Pellentesque ex nulla, pellentesque in malesuada sit amet, tincidunt eu nunc. Fusce auctor odio in est ultricies imperdiet. Pellentesque non sem nulla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean sit amet molestie velit. Nunc ut fringilla turpis."
+                           MaxLines="3"
+                           LineHeight="1.2"
+                        />
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="MaxLines">
+                    <controls:SubtitleComponentView.Component>
+                        <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut volutpat nulla. Pellentesque ex nulla, pellentesque in malesuada sit amet, tincidunt eu nunc. Fusce auctor odio in est ultricies imperdiet. Pellentesque non sem nulla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean sit amet molestie velit. Nunc ut fringilla turpis."
+                           MaxLines="3"
+                           />
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="LineBreakMode">
+                    <controls:SubtitleComponentView.Component>
+                        <StackLayout>
+                        <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut volutpat nulla. Pellentesque ex nulla, pellentesque in malesuada sit amet, tincidunt eu nunc. Fusce auctor odio in est ultricies imperdiet. Pellentesque non sem nulla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean sit amet molestie velit. Nunc ut fringilla turpis."
+                           TextColor="Gray"
+                           LineBreakMode="WordWrap" 
+                            />
+
+                            <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut volutpat nulla. Pellentesque ex nulla, pellentesque in malesuada sit amet, tincidunt eu nunc. Fusce auctor odio in est ultricies imperdiet. Pellentesque non sem nulla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean sit amet molestie velit. Nunc ut fringilla turpis."
+                           TextColor="Green"
+                           LineBreakMode="NoWrap"
+                           />
+                            <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut volutpat nulla. Pellentesque ex nulla, pellentesque in malesuada sit amet, tincidunt eu nunc. Fusce auctor odio in est ultricies imperdiet. Pellentesque non sem nulla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean sit amet molestie velit. Nunc ut fringilla turpis."
+                           TextColor="Gray"
+                           LineBreakMode="CharacterWrap"
+                           />
+                            <Label Text="Head: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut volutpat nulla. Pellentesque ex nulla, pellentesque in malesuada sit amet, tincidunt eu nunc. Fusce auctor odio in est ultricies imperdiet. Pellentesque non sem nulla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean sit amet molestie velit. Nunc ut fringilla turpis."
+                           TextColor="Green"
+                           LineBreakMode="HeadTruncation"
+                           />
+                            <Label Text="Middle: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut volutpat nulla. Pellentesque ex nulla, pellentesque in malesuada sit amet, tincidunt eu nunc. Fusce auctor odio in est ultricies imperdiet. Pellentesque non sem nulla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean sit amet molestie velit. Nunc ut fringilla turpis."
+                           TextColor="Gray"
+                           LineBreakMode="MiddleTruncation"
+                           />
+                            <Label Text="Tail: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut volutpat nulla. Pellentesque ex nulla, pellentesque in malesuada sit amet, tincidunt eu nunc. Fusce auctor odio in est ultricies imperdiet. Pellentesque non sem nulla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean sit amet molestie velit. Nunc ut fringilla turpis."
+                           TextColor="Green"
+                           LineBreakMode="TailTruncation"
+                           />
+                        </StackLayout>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

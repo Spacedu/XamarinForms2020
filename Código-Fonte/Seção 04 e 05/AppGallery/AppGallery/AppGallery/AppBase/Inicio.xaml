@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:enhancedEntry="clr-namespace:LeoJHarris.FormsPlugin.Abstractions;assembly=LeoJHarris.FormsPlugin.Abstractions"
+             xmlns:viewModel="clr-namespace:AppGallery.AppBase.ViewModels"
+             Title="Menu"
+             mc:Ignorable="d"
+             x:Class="AppGallery.AppBase.Inicio">
+    <ContentPage.BindingContext>
+        <viewModel:InicioViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <Grid ColumnSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <enhancedEntry:EnhancedEntry x:Name="TxtPesquisa" Placeholder="Pesquisar" Grid.Row="0" Grid.Column="0" BackgroundColor="{DynamicResource SearchEntryBackgroundColor}" Style="{DynamicResource SearchEntry}" BorderWidth="2" BorderColor="{StaticResource SearchButtonBorderColor}" CornerRadius="0" />
+            <Button Text="OK" Clicked="PesquisaAction" Grid.Row="0" Grid.Column="1" Style="{DynamicResource SearchButton}" />
+
+            <CollectionView ItemsSource="{Binding PageList}" ItemTemplate="{StaticResource PageListDataTemplate}" Grid.Row="1" Grid.ColumnSpan="2" />
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

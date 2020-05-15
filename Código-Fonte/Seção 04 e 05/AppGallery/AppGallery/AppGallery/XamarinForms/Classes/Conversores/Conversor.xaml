@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converter="clr-namespace:AppGallery.XamarinForms.Classes.Conversores"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="Converter"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Classes.Conversores.Conversor">
+    <ContentPage.Resources>
+        <converter:OpcionalConverter x:Key="OpcionalConverter" />
+        <converter:ValorConverter x:Key="ValorConverter" />
+        <converter:ZebraConverter x:Key="ZebraConverter" />
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <controls:TitleComponentView Name="Converter" />
+
+            <ListView x:Name="Lista01" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10" BackgroundColor="{Binding ., Converter={StaticResource ZebraConverter}}">
+                                <Label FontAttributes="Bold">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding Marca}" />
+                                            <Span Text=" - " />
+                                            <Span Text="{Binding Modelo}" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Label Text="{Binding Opcionais, Converter={StaticResource OpcionalConverter}}" />
+                                <Label Text="{Binding Valor, Converter={StaticResource ValorConverter}}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

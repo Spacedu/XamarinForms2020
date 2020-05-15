@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="DataPicker"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Controles.DataSelecaoControle.DataSelecao">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <controls:SubtitleComponentView Properties="Date, MinimumDate, MaximumDate">
+                    <controls:SubtitleComponentView.Component>
+                        <DatePicker Date="03/06/2020" MinimumDate="03/03/2020" MaximumDate="03/10/2020"/>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="Format, CharacterSpacing">
+                    <controls:SubtitleComponentView.Component>
+                        <DatePicker Format="dd/MM/yyyy" CharacterSpacing="5" />
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="TextColor, FontFamily, FontSize, FontAttributes">
+                    <controls:SubtitleComponentView.Component>
+                        <DatePicker Format="dd/MM/yyyy" TextColor="Accent" FontFamily="sans-serif-light" FontSize="24" FontAttributes="Italic"/>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Events="DateSelected">
+                    <controls:SubtitleComponentView.Component>
+                        <StackLayout>
+                            <DatePicker Format="dd/MM/yyyy" DateSelected="DatePicker_DateSelected" />
+                            <Label x:Name="lblInformativo" />
+                        </StackLayout>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

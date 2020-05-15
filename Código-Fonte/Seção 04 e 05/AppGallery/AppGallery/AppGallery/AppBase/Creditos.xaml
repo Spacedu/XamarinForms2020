@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppGallery.AppBase.Creditos">
+    <ContentPage.Content>
+        <StackLayout Padding="17">
+            <Label Text="Créditos" Style="{DynamicResource TitleCredits}" />
+
+            <Label Text="Autor" Style="{DynamicResource SubtitleCredits}" />
+            <Label Text="">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Elias Ribeiro - " />
+                        <Span Style="{StaticResource Link}" Text="Spacedu">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="AbrirNavegador" CommandParameter="https://github.com/Spacedu/" />
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label Text="Icones" Style="{DynamicResource SubtitleCredits}" />
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Icons made by " />
+                        <Span Style="{StaticResource Link}" Text="Freepik">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="AbrirNavegador" CommandParameter="https://freepik.com" />
+                            </Span.GestureRecognizers>
+                        </Span>
+                        <Span Text=" from " />
+                        <Span Style="{StaticResource Link}" Text="Flaticon">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="AbrirNavegador" CommandParameter="https://flaticon.com" />
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label Text="Controles" Style="{DynamicResource SubtitleCredits}" />
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Xamarin Forms - " />
+                        <Span Style="{StaticResource Link}" Text="Docs">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="AbrirNavegador" CommandParameter="https://docs.microsoft.com/pt-br/xamarin/xamarin-forms/" />
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="EnhancedEntry - " />
+                        <Span Style="{StaticResource Link}" Text="LeoJHarris">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="AbrirNavegador" CommandParameter="https://github.com/LeoJHarris/EnhancedEntry" />
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>                
+            </Label>
+
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Effect - StatusBarColor - " />
+                        <Span Style="{StaticResource Link}" Text="jsuarezruiz">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="AbrirNavegador" CommandParameter="https://github.com/jsuarezruiz/xamarin-forms-statusbar" />
+                            </Span.GestureRecognizers>
+                        </Span>
+                        <Span Style="{StaticResource Link}" Text=" Junior Jiang">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="AbrirNavegador" CommandParameter="https://stackoverflow.com/questions/58069085/change-status-bar-colour-on-ios13?rq=1" />
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>                
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="Light/Dark Theme(Mode)"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Estilos.TemaClaroEscuro.ClaroEscuro">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <AppThemeColor x:Key="CorFundo" Light="White" Dark="Black" />
+            <AppThemeColor x:Key="CorTexto" Light="Black" Dark="White" />
+            <AppThemeColor x:Key="FrameBorda" Light="Black" Dark="#333333" />
+            <AppThemeColor x:Key="FrameCorFundo" Light="White" Dark="#333333" />
+
+            <OnAppTheme x:Key="LblTituloEN" x:TypeArguments="x:String" Light="Light" Dark="Dark" />
+            <OnAppTheme x:Key="LblTituloPT" x:TypeArguments="x:String" Light="(claro)" Dark="(escuro)" />            
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="{DynamicResource CorFundo}">
+            <controls:TitleComponentView Name="Light/Dark Theme" />
+
+            <Label Text="{DynamicResource LblTituloEN}" TextColor="{DynamicResource CorTexto}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="{DynamicResource LblTituloPT}" TextColor="{DynamicResource CorTexto}"  HorizontalOptions="CenterAndExpand" FontSize="10"/>
+
+            <Frame Margin="0, 80, 0, 0" WidthRequest="150" HeightRequest="150" HorizontalOptions="Center"
+                   BorderColor="{DynamicResource FrameBorda}" 
+                   BackgroundColor="{DynamicResource FrameCorFundo}" >
+                <Label Text="A" FontAttributes="{OnAppTheme Light=Bold, Dark=Italic}" FontSize="100" HorizontalTextAlignment="Center" TextColor="{DynamicResource CorTexto}" />
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

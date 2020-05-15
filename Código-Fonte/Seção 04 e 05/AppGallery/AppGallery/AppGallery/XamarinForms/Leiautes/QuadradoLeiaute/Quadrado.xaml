@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             Title="Frame"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Leiautes.QuadradoLeiaute.Quadrado">
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="40">
+
+            <Frame HorizontalOptions="Center" CornerRadius="100" Padding="0" IsClippedToBounds="True" BorderColor="Black">
+                <BoxView Color="Green" WidthRequest="150" HeightRequest="150"/>
+                
+
+            </Frame>
+            
+            <Frame Padding="0">
+                <StackLayout>
+                    <Label Text="Steven Spielberg" TextColor="Black" FontSize="24" HorizontalOptions="Center" Margin="20, 20, 20, 10"/>
+                    <BoxView HeightRequest="1" Color="LightGray" HorizontalOptions="FillAndExpand" />
+                    <Label Text="Diretor de vários filmes famosos" Margin="20"/>
+                </StackLayout>
+            </Frame>
+            
+            <Frame HasShadow="False" CornerRadius="1000" BorderColor="Green">
+                <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            </Frame>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
