@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#F5F6FA"
+             x:Class="AppTarefa.Telas.Visualizar">
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+
+            <Grid TranslationY="{OnPlatform Android=30, iOS=30, UWP=50}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="75"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <StackLayout Margin="10, 0, 10, 30" Padding="20, 20, 0, 0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="BtnVoltar" />
+                    </StackLayout.GestureRecognizers>
+                    <Image Source="{OnPlatform Android='back.png', iOS='back.png', UWP='Imagens/back.png'}" />
+                </StackLayout>
+
+                <Label Text="{Binding Nome}" Margin="{OnPlatform Android='0, 20, 0, 0', iOS='0, 20, 0, 0', UWP='0, 25, 0, 0'}" Grid.Column="1" Style="{StaticResource TituloVisualizar}" />
+            </Grid>
+
+            <Frame HasShadow="False" CornerRadius="30" TranslationY="30" Grid.Row="1">
+                <StackLayout>
+                    <Label Text="{Binding Data, StringFormat='{0:dd/MM/yyyy}'}" Style="{StaticResource TituloCampo}"/>
+                    <Label Style="{StaticResource ValorCampo}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{Binding HorarioInicial, StringFormat=\{0:hh\\:mm\}}" />
+                                <Span Text=" - " />
+                                <Span Text="{Binding HorarioFinal, StringFormat=\{0:hh\\:mm\}}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label x:Name="LblTituloNota" Text="Nota" Style="{StaticResource TituloVisualizar}" />
+                    <Label Text="{Binding Nota}" Style="{StaticResource TituloCampo}" />
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
