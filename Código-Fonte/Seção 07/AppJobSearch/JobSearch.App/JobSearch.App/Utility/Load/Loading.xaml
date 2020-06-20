@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<popup:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             mc:Ignorable="d"
+             CloseWhenBackgroundIsClicked="False"
+             x:Class="JobSearch.App.Utility.Load.Loading">
+    <ActivityIndicator IsRunning="True" Color="{StaticResource Purple}" HorizontalOptions="Center" WidthRequest="100" />
+</popup:PopupPage>

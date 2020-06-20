@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="JobSearch.App.Views.RegisterJob">
+    <ContentPage.Content>
+        
+            <StackLayout Spacing="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="50" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                    </Grid.RowDefinitions>
+                    <ImageButton Style="{StaticResource BackButton}" Clicked="GoBack"/>
+                    <Label Text="Jobsearch" Style="{StaticResource Title}" Grid.Column="1" />
+                    <ImageButton Style="{StaticResource OkButton}" Grid.Column="2" Clicked="Save"/>
+                </Grid>
+                <BoxView Color="#D7CCFF" HeightRequest="1" />
+            <ScrollView>
+                <StackLayout>
+                    <Label x:Name="TxtMessages" LineHeight="1.2" TextColor="OrangeRed" />
+                    
+                    <Frame StyleClass="EntryFrame" Margin="0, 10, 0, 0">
+                        <Entry x:Name="TxtCompany" Placeholder="Empresa" />
+                    </Frame>
+
+                    <Frame StyleClass="EntryFrame">
+                        <Entry x:Name="TxtJobTitle"  Placeholder="Cargo" />
+                    </Frame>
+
+                    <Frame StyleClass="EntryFrame">
+                        <Entry x:Name="TxtCityState" Placeholder="Cidade/UF" />
+                    </Frame>
+
+                    <Frame StyleClass="EntryFrame">
+                        <Entry x:Name="TxtSalary" Placeholder="Salário (reais)" />
+                    </Frame>
+
+                    <Frame StyleClass="EntryFrame">
+                        <Entry x:Name="TxtContractType"  Placeholder="Regime" />
+                    </Frame>
+
+                    <Frame StyleClass="EntryFrame">
+                        <Entry x:Name="TxtTecnologyTools" Placeholder="Tecnologia/Ferramentas" />
+                    </Frame>
+
+                    <Frame StyleClass="EditorFrame">
+                        <Editor x:Name="TxtCompanyDescription" AutoSize="TextChanges" Placeholder="Descrição da Empresa" />
+                    </Frame>
+
+                    <Frame StyleClass="EditorFrame">
+                        <Editor x:Name="TxtJobDescription" AutoSize="TextChanges" Placeholder="Descrição do Trabalho" />
+                    </Frame>
+
+                    <Frame StyleClass="EditorFrame">
+                        <Editor x:Name="TxtBenefits" AutoSize="TextChanges" Placeholder="Benefícios" />
+                    </Frame>
+
+                    <Frame StyleClass="EntryFrame">
+                        <Entry x:Name="TxtInterestedSendEmailTo" Placeholder="Interessados enviar e-mail para" />
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+            </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

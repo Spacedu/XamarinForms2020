@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="JobSearch.App.Views.Register">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <ImageButton Style="{StaticResource BackButton}" Clicked="GoBack"/>
+                <Label Text="Jobsearch" Style="{StaticResource Title}" Grid.Column="1" />
+            </Grid>
+            <BoxView Color="#D7CCFF" HeightRequest="1" />
+
+            
+
+            <Grid VerticalOptions="CenterAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <Label x:Name="TxtMessages" Grid.Row="0" Grid.ColumnSpan="2" LineHeight="1.2" TextColor="OrangeRed" />
+                
+                <Frame StyleClass="EntryFrame" Grid.Row="1" Grid.ColumnSpan="2" >
+                    <Entry x:Name="TxtName" Placeholder="Nome" />
+                </Frame>
+                <Frame StyleClass="EntryFrame" Grid.Row="2" Grid.ColumnSpan="2" >
+                    <Entry x:Name="TxtEmail" Placeholder="E-mail" />
+                </Frame>
+                <Frame StyleClass="EntryFrame" Grid.Row="3" Grid.ColumnSpan="2">
+                    <Entry x:Name="TxtPassword" Placeholder="Senha" />
+                </Frame>
+                <Button Text="Salvar" Clicked="SaveAction" Grid.Row="4" />
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
