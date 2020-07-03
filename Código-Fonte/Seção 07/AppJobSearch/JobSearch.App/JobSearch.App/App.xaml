@@ -180,6 +180,19 @@
                 <Setter Property="HeightRequest" Value="22" />
                 <Setter Property="VerticalOptions" Value="Center" />
             </Style>
+
+            <Style TargetType="RadioButton">
+                <Setter Property="TextColor" Value="{StaticResource DarkGrayBlue}" />
+                <Setter Property="FontFamily" Value="Montserrat" />
+                <Setter Property="FontSize" Value="12" />
+            </Style>
+
+            <Style TargetType="Label" x:Key="LabelEntry">
+                <Setter Property="Padding" Value="5, 11" />
+                <Setter Property="TextColor" Value="{StaticResource DarkGrayBlue}" />
+                <Setter Property="FontFamily" Value="Montserrat" />
+                <Setter Property="FontSize" Value="12" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

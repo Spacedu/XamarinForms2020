@@ -40,6 +40,12 @@ namespace JobSearch.API.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<double>("FinalSalary")
+                        .HasColumnType("REAL");
+
+                    b.Property<double>("InitialSalary")
+                        .HasColumnType("REAL");
+
                     b.Property<string>("InterestedSendEmailTo")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -54,9 +60,6 @@ namespace JobSearch.API.Migrations
 
                     b.Property<DateTime>("PublicationDate")
                         .HasColumnType("TEXT");
-
-                    b.Property<double>("Salary")
-                        .HasColumnType("REAL");
 
                     b.Property<string>("TecnologyTools")
                         .IsRequired()

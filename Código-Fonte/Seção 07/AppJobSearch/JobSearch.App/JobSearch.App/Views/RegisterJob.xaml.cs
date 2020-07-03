@@ -1,5 +1,6 @@
 ﻿using JobSearch.App.Models;
 using JobSearch.App.Services;
+using JobSearch.App.Utility.Converters;
 using JobSearch.App.Utility.Load;
 using JobSearch.Domain.Models;
 using Newtonsoft.Json;
@@ -32,6 +33,7 @@ namespace JobSearch.App.Views
 
         private async void Save(object sender, EventArgs e)
         {
+            //TODO - Adicionar Validação
             TxtMessages.Text = String.Empty;
 
             User user = JsonConvert.DeserializeObject<User>(App.Current.Properties["User"].ToString());
@@ -41,8 +43,9 @@ namespace JobSearch.App.Views
                 Company = TxtCompany.Text,
                 JobTitle = TxtJobTitle.Text,
                 CityState = TxtCityState.Text,
-                Salary = TxtSalary.Text,
-                ContractType = TxtContractType.Text,
+                InitialSalary = TextToDoubleConverter.ToDouble( TxtInitialSalary.Text ),
+                FinalSalary = TextToDoubleConverter.ToDouble(TxtFinalSalary.Text),
+                ContractType = (RBCLT.IsChecked) ? "CLT" : "PJ",
                 TecnologyTools = TxtTecnologyTools.Text,
                 CompanyDescription = TxtCompanyDescription.Text,
                 JobDescription = TxtJobDescription.Text,
@@ -57,9 +60,9 @@ namespace JobSearch.App.Views
 
             if (responseService.IsSuccess)
             {
-                App.Current.Properties.Add("User", JsonConvert.SerializeObject(responseService.Data));
-                await App.Current.SavePropertiesAsync();
-                App.Current.MainPage = new NavigationPage(new Start());
+                await Navigation.PopAllPopupAsync();
+                await DisplayAlert("Vaga cadastrada!", "Vaga cadastrada com sucesso!", "OK");                
+                await Navigation.PopAsync();
             }
             else
             {
@@ -81,10 +84,8 @@ namespace JobSearch.App.Views
                 {
                     await DisplayAlert("Erro!", "Oops! Ocorreu um erro inesperado! Tente novamente mais tarde.", "OK");
                 }
-
+                await Navigation.PopAllPopupAsync();
             }
-            await Navigation.PopAllPopupAsync();
-            await Navigation.PopAsync();
         }
     }
 }

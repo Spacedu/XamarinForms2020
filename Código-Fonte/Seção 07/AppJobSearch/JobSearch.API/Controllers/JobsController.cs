@@ -30,6 +30,19 @@ namespace JobSearch.API.Controllers
             if (cityState == null)
                 cityState = "";
 
+            var totalItems = _data.Jobs
+                .Where(a =>
+                    a.PublicationDate >= DateTime.Now.AddDays(-15) &&
+                    a.CityState.ToLower().Contains(cityState.ToLower()) &&
+                    (
+                        a.JobTitle.ToLower().Contains(word.ToLower()) ||
+                        a.TecnologyTools.ToLower().Contains(word.ToLower()) ||
+                        a.Company.ToLower().Contains(word.ToLower())
+                    )
+                ).Count();
+
+            Response.Headers.Add("X-Total-Items", totalItems.ToString());
+
             return _data.Jobs
                 .Where(a =>
                     a.PublicationDate >= DateTime.Now.AddDays(-15) &&

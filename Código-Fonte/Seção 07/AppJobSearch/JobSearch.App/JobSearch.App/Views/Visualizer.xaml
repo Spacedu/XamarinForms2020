@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:control="clr-namespace:JobSearch.App.Utility.Controls"
              x:Class="JobSearch.App.Views.Visualizer">
     <ContentPage.Content>
         <StackLayout>
@@ -21,7 +22,7 @@
             <BoxView Color="#D7CCFF" HeightRequest="1" />
             <ScrollView>
                 <StackLayout>
-                    <Grid RowSpacing="0">
+                    <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="3*" />
                             <ColumnDefinition Width="2*" />
@@ -32,28 +33,29 @@
                             <RowDefinition />
                             <RowDefinition />
                             <RowDefinition />
-                            <RowDefinition />
                         </Grid.RowDefinitions>
-                        <Label Text="Digital Ocean"  Style="{StaticResource TextSecondary}" />
-                        <Label Text="Back-End Developer" Style="{StaticResource TextPrimary}" Grid.Row="1" />
-                        <Label Text="São Paulo, SP"  Style="{StaticResource TextSecondary}" Grid.Row="2"/>
+                        <Label Text="{Binding Company}" Style="{StaticResource TextSecondary}" />
+                        <Label Text="{Binding JobTitle}" Style="{StaticResource TextPrimary}" Grid.Row="1" />
+                        <Label Text="{Binding CityState}"  Style="{StaticResource TextSecondary}" Grid.Row="2"/>
                         <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span Text="7.0-11k" Style="{StaticResource MoneyLabel}" />
+                                    <Span Text="{Binding InitialSalary}" Style="{StaticResource MoneyLabel}" />
+                                    <Span Text="-" Style="{StaticResource MoneyLabel}" />
+                                    <Span Text="{Binding FinalSalary}" Style="{StaticResource MoneyLabel}" />
                                     <Span Text=" BRL" Style="{StaticResource CurrencyLabel}" />
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
-                        <Label Text="CLT" Style="{StaticResource TextPrimary}" Grid.Row="4"  />
-                        <Label Text="Tags" Grid.Row="5" />
+                        <Label Text="{Binding ContractType}" Style="{StaticResource TextPrimary}" Grid.Row="4"  />
+                        
 
 
                         <Label Grid.Row="0" Grid.Column="1" HorizontalOptions="End" Style="{StaticResource TextPrimary}" >
                             <Label.FormattedText>
                                 <FormattedString>
                                     <Span Text="Pub. " />
-                                    <Span Text="02/02/2020" />
+                                    <Span Text="{Binding PublicationDate, StringFormat='{0:dd/MM/yyyy}'}}" />
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
@@ -62,21 +64,23 @@
                             <Label.FormattedText>
                                 <FormattedString>
                                     <Span Text="id. " />
-                                    <Span Text="124651" />
+                                    <Span Text="{Binding Id}" />
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
                     </Grid>
 
+                    <control:TagView Techonologies="{Binding TecnologyTools}" />
+
                     <Label  Style="{StaticResource TextPrimary}" Text="Interessados enviar e-mail para:" />
-                    <Label Style="{StaticResource TextSecondary}" Text="job@digitalocean.com.br" />
+                    <Label Style="{StaticResource TextSecondary}" Text="{Binding InterestedSendEmailTo}" />
                     <BoxView Color="#F3F5F7" HeightRequest="1" />
-                    <Label Style="{StaticResource TitlePrimary}" Text="Descrição da empresa" />
-                    <Label  Style="{StaticResource TextPrimary}" Text="A DigitalOcean, Inc. é uma provedora americana de infraestrutura em nuvem com sede na cidade de Nova York e data centers em todo o mundo. A DigitalOcean fornece aos desenvolvedores serviços em nuvem que ajudam a implantar e dimensionar aplicativos executados simultaneamente em vários computadores. A DigitalOcean, Inc. é uma provedora americana de infraestrutura em nuvem com sede na cidade de Nova York e data centers em todo o mundo. A DigitalOcean fornece aos desenvolvedores serviços em nuvem que ajudam a implantar e dimensionar aplicativos executados simultaneamente em vários computadores. A DigitalOcean, Inc. é uma provedora americana de infraestrutura em nuvem com sede na cidade de Nova York e data centers em todo o mundo. A DigitalOcean fornece aos desenvolvedores serviços em nuvem que ajudam a implantar e dimensionar aplicativos executados simultaneamente em vários computadores. A DigitalOcean, Inc. é uma provedora americana de infraestrutura em nuvem com sede na cidade de Nova York e data centers em todo o mundo. A DigitalOcean fornece aos desenvolvedores serviços em nuvem que ajudam a implantar e dimensionar aplicativos executados simultaneamente em vários computadores." />
-                    <Label Style="{StaticResource TitlePrimary}" Text="Descrição do trabalho" />
-                    <Label  Style="{StaticResource TextPrimary}" Text="Implementar novas tecnologias de gerenciamento de servidores, fazer integração com ferramentas de VM." />
-                    <Label Style="{StaticResource TitlePrimary}" Text="Benefícios" />
-                    <Label  Style="{StaticResource TextPrimary}" Text="Vale transporte Vale alimentação" />
+                    <Label Style="{StaticResource TitlePrimary}" Text="Descrição da empresa" x:Name="HeaderCompanyDescription" />
+                    <Label  Style="{StaticResource TextPrimary}" Text="{Binding CompanyDescription}" x:Name="TextCompanyDescription" />
+                    <Label Style="{StaticResource TitlePrimary}" Text="Descrição do trabalho" x:Name="HeaderJobDescription" />
+                    <Label  Style="{StaticResource TextPrimary}" Text="{Binding JobDescription}" x:Name="TextJobDescription" />
+                    <Label Style="{StaticResource TitlePrimary}" Text="Benefícios" x:Name="HeaderBenefits" />
+                    <Label  Style="{StaticResource TextPrimary}" Text="{Binding Benefits}" x:Name="TextBenefits" />
                 </StackLayout>
             </ScrollView>
         </StackLayout>

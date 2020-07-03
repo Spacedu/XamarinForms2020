@@ -57,6 +57,10 @@ namespace JobSearch.App.UWP
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
+                Xamarin.Forms.Forms.SetFlags(new string[] {
+                    "RadioButton_Experimental"
+                });
+
                 Rg.Plugins.Popup.Popup.Init();
                 Xamarin.Forms.Forms.Init(e);
 

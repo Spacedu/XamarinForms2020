@@ -4,11 +4,12 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:control="clr-namespace:JobSearch.App.Utility.Controls"
              xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              x:Class="JobSearch.App.Views.Start">
     <ContentPage.Content>
         <StackLayout>
-            <Grid>
+            <Grid VerticalOptions="Start" HeightRequest="70">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
                     <ColumnDefinition Width="50"/>
@@ -20,7 +21,7 @@
             </Grid>
             <BoxView Color="#D7CCFF" HeightRequest="1" />
 
-            <Grid Margin="0, 10, 0, 10">
+            <Grid Margin="0, 10, 0, 10" VerticalOptions="Start" HeightRequest="140">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="3*" />
                     <ColumnDefinition Width="2*" />
@@ -49,56 +50,55 @@
                         <Entry Placeholder="Cidade/Estado" x:Name="TxtCityState" Grid.Column="1" />
                     </Grid>
                 </Frame>
-                <Button Text="Pesquisar" Grid.Row="1" Grid.Column="1" />
+                <Button Text="Pesquisar" Clicked="Search" Grid.Row="1" Grid.Column="1" />
             </Grid>
-            <Label>
-                <Label.FormattedText>
-                    <FormattedString>
-                        <Span Text="2 resultados em " Style="{StaticResource TextPrimary}" />
-                        <Span Text="São Paulo, SP" Style="{StaticResource TextSecondary}" />
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
+            <Label x:Name="TxtResultsCount" Style="{StaticResource TextPrimary}" />
 
-            <pancake:PancakeView BackgroundColor="{StaticResource White}" BorderColor="{StaticResource GrayBlue}" Padding="15" Margin="4" Elevation="3">
-                <pancake:PancakeView.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="GoVisualizer" />
-                </pancake:PancakeView.GestureRecognizers>
-                <Grid RowSpacing="0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="3*" />
-                        <ColumnDefinition Width="1*" />
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
-                    <Label Text="Digital Ocean"  Style="{StaticResource TextSecondary}" Grid.ColumnSpan="2"/>
-                    <Label Text="Back-End Developer" Style="{StaticResource TextPrimary}" Grid.Row="1" />
-                    <Label Text="São Paulo, SP"  Style="{StaticResource TextSecondary}" Grid.Row="2"/>
-                    <Label Text="Tags" Grid.Row="3"/>
+            <Grid>
+                <CollectionView x:Name="ListOfJobs" RemainingItemsThreshold="-1" RemainingItemsThresholdReached="InfinitySearch">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <pancake:PancakeView BackgroundColor="{StaticResource White}" BorderColor="{StaticResource GrayBlue}" Padding="15" Margin="4" Elevation="3">
+                                    <pancake:PancakeView.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="GoVisualizer" CommandParameter="{Binding .}"/>
+                                    </pancake:PancakeView.GestureRecognizers>
+                                    <Grid RowSpacing="0" VerticalOptions="Start" HeightRequest="100">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="3*" />
+                                            <ColumnDefinition Width="2*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="25"/>
+                                            <RowDefinition />
+                                            <RowDefinition Height="25" />
+                                            <RowDefinition Height="25" />
+                                        </Grid.RowDefinitions>
+                                        <Label Text="{Binding Company}" MaxLines="1" LineBreakMode="TailTruncation"  Style="{StaticResource TextSecondary}" Grid.ColumnSpan="2"/>
+                                        <Label Text="{Binding JobTitle}" MaxLines="1" LineBreakMode="TailTruncation" Style="{StaticResource TextPrimary}" Grid.Row="1" />
+                                        <Label Text="{Binding CityState}" MaxLines="1" LineBreakMode="TailTruncation"  Style="{StaticResource TextSecondary}" Grid.Row="2"/>
+                                        <control:TagView Techonologies="{Binding TecnologyTools}" NumberOfWords="2" Grid.Row="3"/>
 
-                    <Label Grid.Row="1" Grid.Column="1">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <Span Text="7.0-11k" Style="{StaticResource MoneyLabel}" />
-                                <Span Text=" BRL" Style="{StaticResource CurrencyLabel}" />
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
-                    <Label Grid.Row="3" Style="{StaticResource IdLabel}" Grid.Column="1">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <Span Text="id. " />
-                                <Span Text="124651" />
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
+                                        <StackLayout Spacing="0" Orientation="Horizontal" HorizontalOptions="End" Grid.Row="1"  Grid.Column="1">
+                                            <Label Text="{Binding InitialSalary}" Style="{StaticResource MoneyLabel}" />
+                                            <Label  Text="-" Style="{StaticResource CurrencyLabel}" />
+                                            <Label  Text="{Binding FinalSalary}" Style="{StaticResource MoneyLabel}" />
+                                        </StackLayout>
+                                        <Label Text="BRL" Style="{StaticResource CurrencyLabel}" HorizontalOptions="End" Grid.Row="2"  Grid.Column="1" />
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="End" Grid.Row="3"  Grid.Column="1">
+                                            <Label Text="id. " Style="{StaticResource IdLabel}"/>
+                                            <Label Text="{Binding Id}" Style="{StaticResource IdLabel}"/>
+                                        </StackLayout>
+                                    </Grid>
+                                </pancake:PancakeView>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <Label Text="0 resultado." Style="{StaticResource TextPrimary}" x:Name="NoResult" IsVisible="false" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                <ActivityIndicator x:Name="Loading" IsRunning="False" HorizontalOptions="Center" VerticalOptions="Center" />
+            </Grid>
 
-                </Grid>
-            </pancake:PancakeView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

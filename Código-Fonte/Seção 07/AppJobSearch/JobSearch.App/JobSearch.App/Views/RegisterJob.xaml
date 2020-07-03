@@ -27,43 +27,52 @@
                     <Label x:Name="TxtMessages" LineHeight="1.2" TextColor="OrangeRed" />
                     
                     <Frame StyleClass="EntryFrame" Margin="0, 10, 0, 0">
-                        <Entry x:Name="TxtCompany" Placeholder="Empresa" />
+                        <Entry x:Name="TxtCompany" Placeholder="Empresa" ReturnType="Next" />
                     </Frame>
 
                     <Frame StyleClass="EntryFrame">
-                        <Entry x:Name="TxtJobTitle"  Placeholder="Cargo" />
+                        <Entry x:Name="TxtJobTitle"  Placeholder="Cargo" ReturnType="Next" />
                     </Frame>
 
                     <Frame StyleClass="EntryFrame">
-                        <Entry x:Name="TxtCityState" Placeholder="Cidade/UF" />
+                        <Entry x:Name="TxtCityState" Placeholder="Cidade/UF" ReturnType="Next" />
                     </Frame>
 
                     <Frame StyleClass="EntryFrame">
-                        <Entry x:Name="TxtSalary" Placeholder="Salário (reais)" />
+                        <Entry x:Name="TxtInitialSalary" Keyboard="Numeric" ReturnType="Next" Placeholder="Salário inicial (reais)" />
                     </Frame>
 
                     <Frame StyleClass="EntryFrame">
-                        <Entry x:Name="TxtContractType"  Placeholder="Regime" />
+                        <Entry x:Name="TxtFinalSalary" Keyboard="Numeric" ReturnType="Next" Placeholder="Salário final (reais)" />
                     </Frame>
 
                     <Frame StyleClass="EntryFrame">
-                        <Entry x:Name="TxtTecnologyTools" Placeholder="Tecnologia/Ferramentas" />
-                    </Frame>
-
-                    <Frame StyleClass="EditorFrame">
-                        <Editor x:Name="TxtCompanyDescription" AutoSize="TextChanges" Placeholder="Descrição da Empresa" />
-                    </Frame>
-
-                    <Frame StyleClass="EditorFrame">
-                        <Editor x:Name="TxtJobDescription" AutoSize="TextChanges" Placeholder="Descrição do Trabalho" />
-                    </Frame>
-
-                    <Frame StyleClass="EditorFrame">
-                        <Editor x:Name="TxtBenefits" AutoSize="TextChanges" Placeholder="Benefícios" />
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Regime" HorizontalOptions="FillAndExpand" Style="{StaticResource LabelEntry}" />
+                            <RadioButton x:Name="RBCLT" IsChecked="True" Text="CLT" />
+                            <RadioButton x:Name="RBPJ"  Text="PJ" />
+                        </StackLayout>
+                        
                     </Frame>
 
                     <Frame StyleClass="EntryFrame">
-                        <Entry x:Name="TxtInterestedSendEmailTo" Placeholder="Interessados enviar e-mail para" />
+                        <Entry x:Name="TxtTecnologyTools"  ReturnType="Next" Placeholder="Tecnologia/Ferramentas" />
+                    </Frame>
+
+                    <Frame StyleClass="EntryFrame">
+                        <Entry x:Name="TxtCompanyDescription"  ReturnType="Next" Placeholder="Descrição da Empresa" />
+                    </Frame>
+
+                    <Frame StyleClass="EntryFrame">
+                        <Entry x:Name="TxtJobDescription"  ReturnType="Next" Placeholder="Descrição do Trabalho" />
+                    </Frame>
+
+                    <Frame StyleClass="EntryFrame">
+                        <Entry x:Name="TxtBenefits"  ReturnType="Next" Placeholder="Benefícios" />
+                    </Frame>
+
+                    <Frame StyleClass="EntryFrame">
+                        <Entry x:Name="TxtInterestedSendEmailTo"  ReturnType="Done" Placeholder="Interessados enviar e-mail para" />
                     </Frame>
                 </StackLayout>
             </ScrollView>
