@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppTarefa.Android", "AppTar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppTarefa.iOS", "AppTarefa\AppTarefa.iOS\AppTarefa.iOS.csproj", "{42B5FA7C-7816-4BA0-AFC8-42F56ED721FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppTarefa", "AppTarefa\AppTarefa\AppTarefa.csproj", "{368077E3-0CC2-4BCC-B90E-8FF9F701C3ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppTarefa", "AppTarefa\AppTarefa\AppTarefa.csproj", "{368077E3-0CC2-4BCC-B90E-8FF9F701C3ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,9 +99,9 @@ Global
 		{34E0D46E-32A4-4AD7-9B89-4152ED86ACB4}.Release|x86.ActiveCfg = Release|Any CPU
 		{34E0D46E-32A4-4AD7-9B89-4152ED86ACB4}.Release|x86.Build.0 = Release|Any CPU
 		{34E0D46E-32A4-4AD7-9B89-4152ED86ACB4}.Release|x86.Deploy.0 = Release|Any CPU
-		{42B5FA7C-7816-4BA0-AFC8-42F56ED721FB}.Debug|Any CPU.ActiveCfg = Debug|iPhone
-		{42B5FA7C-7816-4BA0-AFC8-42F56ED721FB}.Debug|Any CPU.Build.0 = Debug|iPhone
-		{42B5FA7C-7816-4BA0-AFC8-42F56ED721FB}.Debug|Any CPU.Deploy.0 = Debug|iPhone
+		{42B5FA7C-7816-4BA0-AFC8-42F56ED721FB}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{42B5FA7C-7816-4BA0-AFC8-42F56ED721FB}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{42B5FA7C-7816-4BA0-AFC8-42F56ED721FB}.Debug|Any CPU.Deploy.0 = Debug|iPhoneSimulator
 		{42B5FA7C-7816-4BA0-AFC8-42F56ED721FB}.Debug|ARM.ActiveCfg = Debug|iPhone
 		{42B5FA7C-7816-4BA0-AFC8-42F56ED721FB}.Debug|ARM.Build.0 = Debug|iPhone
 		{42B5FA7C-7816-4BA0-AFC8-42F56ED721FB}.Debug|ARM.Deploy.0 = Debug|iPhone

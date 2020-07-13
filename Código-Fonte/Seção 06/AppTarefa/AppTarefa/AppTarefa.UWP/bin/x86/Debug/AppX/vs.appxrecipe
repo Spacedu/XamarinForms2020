@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Dev\AppTarefa\AppTarefa\AppTarefa.UWP\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>646B7E31F8A36E5274ECF54D08CC0890F0025C1D85921C6B0247B7FD09D4486C</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>E63B3BC51CF4D965D3730CC7D4EBE474652D69A96806853D1947B795F47ADE98</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>9807a2e3-8b4a-4931-941b-2626089e63f3_1.0.0.0_x86__kp9b88s5b3a02</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>9807a2e3-8b4a-4931-941b-2626089e63f3_kp9b88s5b3a02!App</RegisteredUserModeAppID>
     <RegisteredPackageID>9807a2e3-8b4a-4931-941b-2626089e63f3</RegisteredPackageID>
@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Dev\AppTarefa\AppTarefa\AppTarefa.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-05-26T13:51:26.452</Modified>
+      <Modified>2020-07-13T18:29:20.325</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Dev\AppTarefa\AppTarefa\AppTarefa.UWP\bin\x86\Debug\AppTarefa.UWP.exe">
       <PackagePath>entrypoint\AppTarefa.UWP.exe</PackagePath>
-      <Modified>2020-05-26T13:51:22.021</Modified>
+      <Modified>2020-07-13T18:29:16.224</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Elias\.nuget\packages\microsoft.bcl.asyncinterfaces\1.1.1\lib\netstandard2.0\Microsoft.Bcl.AsyncInterfaces.dll">
       <PackagePath>Microsoft.Bcl.AsyncInterfaces.dll</PackagePath>
@@ -158,9 +158,9 @@
       <PackagePath>System.Text.Json.dll</PackagePath>
       <Modified>2020-04-15T01:39:08.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Microsoft\Xamarin\NuGet\win2d.uwp\1.20.0\runtimes\win10-x86\native\Microsoft.Graphics.Canvas.dll">
+    <AppxPackagedFile Include="C:\Users\Elias\.nuget\packages\win2d.uwp\1.20.0\runtimes\win10-x86\native\Microsoft.Graphics.Canvas.dll">
       <PackagePath>Microsoft.Graphics.Canvas.dll</PackagePath>
-      <Modified>2016-11-30T05:58:38.000</Modified>
+      <Modified>2016-11-30T04:58:38.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Elias\.nuget\packages\xamarin.essentials\1.5.3.2\lib\uap10.0.16299\Xamarin.Essentials.dll">
       <PackagePath>Xamarin.Essentials.dll</PackagePath>
@@ -184,11 +184,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Dev\AppTarefa\AppTarefa\AppTarefa\bin\Debug\netstandard2.0\AppTarefa.dll">
       <PackagePath>AppTarefa.dll</PackagePath>
-      <Modified>2020-05-26T13:51:08.871</Modified>
+      <Modified>2020-07-13T18:29:06.765</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Microsoft\Xamarin\NuGet\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
+    <AppxPackagedFile Include="C:\Users\Elias\.nuget\packages\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
-      <Modified>2016-11-30T05:58:38.000</Modified>
+      <Modified>2016-11-30T04:58:38.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\bin\10.0.18362.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd">
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
@@ -474,11 +474,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Dev\AppTarefa\AppTarefa\AppTarefa.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-05-26T13:51:21.591</Modified>
+      <Modified>2020-07-13T18:29:15.951</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Dev\AppTarefa\AppTarefa\AppTarefa.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-05-26T13:51:21.591</Modified>
+      <Modified>2020-07-13T18:29:15.953</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.18362.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -494,11 +494,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Dev\AppTarefa\AppTarefa\AppTarefa.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2020-05-26T13:51:24.082</Modified>
+      <Modified>2020-07-13T18:29:17.597</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Dev\AppTarefa\AppTarefa\AppTarefa.UWP\bin\x86\Debug\Core\AppTarefa.UWP.exe">
       <PackagePath>AppTarefa.UWP.exe</PackagePath>
-      <Modified>2020-05-26T13:51:26.443</Modified>
+      <Modified>2020-07-13T18:29:20.288</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

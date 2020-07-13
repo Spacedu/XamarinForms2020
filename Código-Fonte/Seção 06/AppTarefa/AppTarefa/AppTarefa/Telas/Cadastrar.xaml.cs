@@ -15,7 +15,6 @@ namespace AppTarefa.Telas
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Cadastrar : ContentPage
     {
-        public Listar PaginaMessageCenter { get; set; }
         public Cadastrar()
         {
             InitializeComponent();
@@ -44,11 +43,9 @@ namespace AppTarefa.Telas
 
             if(await ValidacaoAsync(tarefa))
             {
-                bool certo = await new TarefaDB().CadastrarAsync(tarefa);
-
-                if (certo)
+                if( await new TarefaDB().CadastrarAsync(tarefa))
                 {
-                    MessagingCenter.Send<Listar, Tarefa>(PaginaMessageCenter, "AdicionarTarefa", tarefa);
+                    MessagingCenter.Send<Listar, Tarefa>(new Listar(), "OnTarefaCadastrada", tarefa);
                     await Navigation.PopModalAsync();
                 }
             }

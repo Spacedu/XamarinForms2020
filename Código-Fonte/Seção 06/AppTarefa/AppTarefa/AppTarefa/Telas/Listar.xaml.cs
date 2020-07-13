@@ -45,18 +45,19 @@ namespace AppTarefa.Telas
 
             AtualizarDataCalendario(DateTime.Now);
 
-            
-
-            MessagingCenter.Subscribe<Listar, Tarefa>(this, "AdicionarTarefa", (pagina, tarefa) => {
-                Lista.Add(tarefa);
+            MessagingCenter.Subscribe<Listar, Tarefa>(this, "OnTarefaCadastrada", (sender, tarefa) =>
+            {
+                if(Lista!= null) { 
+                    if(DPCalendario.Date == tarefa.Data) { 
+                        Lista.Add(tarefa);
+                    }
+                }
             });
         }
 
         private void BtnCadastrar(object sender, EventArgs e)
         {
-            var cadastrar = new Cadastrar();
-            cadastrar.PaginaMessageCenter = this;
-            Navigation.PushModalAsync(cadastrar);
+            Navigation.PushModalAsync(new Cadastrar());
         }
 
         private void BtnVisualizar(object sender, EventArgs e)
