@@ -6,19 +6,25 @@ O código-fonte aqui presente serve para ensinar algumas estruturas básicas do 
 __· Xamarin:__
 
 ·· Xamarin Forms: Page, Layouts, Views, Styles, MessagingCenter, Converter e muito, muito mais.
+
 ·· Banco de dados SQLite
+
 ·· EF Core
 
 __· API - ASP.NET Core:__
 
 ·· EF Core
+
 ·· Hospedado no Azure Sites
 
 __· Projetos desenvolvidos:__
 
 ·· App - Quantidade.
+
 ·· App - Xamarin Forms - Gallery.
+
 ·· App - Tarefas (Todo List).
+
 ·· App - Job Search + API.
 
 Obs.: Alguns assuntos serão abordados futuramente como MVVM + Shell, no projeto seguinte: App - Shopping.
