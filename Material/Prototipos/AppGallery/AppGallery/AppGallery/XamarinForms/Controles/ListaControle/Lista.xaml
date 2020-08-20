@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Controles.ListaControle.Lista">
+    <ContentPage.Content>
+        <!-- RowHeight="70" -->
+            <ListView CachingStrategy="RetainElement" x:Name="Lista01" HasUnevenRows="True" IsGroupingEnabled="True" IsPullToRefreshEnabled="True" Refreshing="Lista01_Refreshing" SeparatorVisibility="Default" SeparatorColor="Gray" ItemSelected="Lista01_ItemSelected" ItemTapped="Lista01_ItemTapped" Scrolled="Lista01_Scrolled" SelectionMode="None">
+                <ListView.Header>
+                    <StackLayout>
+                    <Label FontAttributes="Bold" Text="ItemsSource, ItemTemplate, Group, RowHeight, PullToRefresh, HasUnevenRows, SeparatorVisibility, SeparatorColor, SelectionMode" />
+                    <Label FontAttributes="Bold" Text="Eventos: Refreshing, ItemSelected, ItemTapped, Scrolled" />
+
+                    <Label FontAttributes="Italic" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac rutrum nisi, ut venenatis purus. Nullam vitae malesuada lorem. Ut turpis massa, fringilla vel vestibulum ut, imperdiet non nulla. Curabitur vitae fringilla ex, eu viverra tortor. Fusce ultricies, urna ut fermentum interdum, magna velit faucibus odio, vitae volutpat augue dui id lacus. In hac habitasse platea dictumst. Proin venenatis mollis eros viverra volutpat. Pellentesque vitae purus id orci vestibulum efficitur at sed erat.
+Vivamus at purus eget ante iaculis vestibulum. Nullam euismod ex feugiat eros placerat rutrum. Donec semper lacus iaculis ex hendrerit, ultrices dapibus risus porta. Sed imperdiet imperdiet nisi, et vestibulum dolor viverra eget. Cras nulla enim, rutrum a fringilla sed, dignissim nec tellus. Praesent consectetur iaculis metus, in convallis magna placerat ut. Nam sagittis libero ac elit bibendum, non bibendum lectus tempus. Nam diam metus, tincidunt eget sagittis in, cursus eget nisi. Pellentesque quis neque hendrerit, congue odio nec, posuere diam. Pellentesque consectetur tellus ligula, vel tristique urna ultrices et." />
+
+                    <Label x:Name="LblSelected" Text="-" />
+                    <Label x:Name="LblTapped" Text="-" />
+                    <Label x:Name="LblScrolled" Text="-" />
+                </StackLayout>
+                </ListView.Header>
+                <ListView.Footer>
+                    <Label Text="Este é um rodapé" />
+                </ListView.Footer>
+                
+                <ListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding Nome}" FontSize="36" TextColor="Accent" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.GroupHeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!-- TextCell, ImageCell, SwitchCell, EntryCell, ViewCell(Personalizar) -->
+                        <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="+Detalhes" Clicked="MaisDetalhes" CommandParameter="{Binding .}" />
+                        </ViewCell.ContextActions>
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding Nome}" FontAttributes="Bold" TextColor="Black" />
+                                <Label Text="{Binding Motor}" TextColor="Gray" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+    </ContentPage.Content>
+</ContentPage>

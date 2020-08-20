@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             Padding="10"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Controles.DeslizanteControle.Deslizante">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Minimum, Maximum, Value" />
+            <Slider Minimum="0" Maximum="5" Value="3" MinimumTrackColor="Gray" MaximumTrackColor="Gray" ThumbColor="Accent" />
+
+            <Label Text="MinimumTrackColor, MaximumTrackColor, ThumbColor" />
+            <Slider MinimumTrackColor="Green" MaximumTrackColor="Green" ThumbColor="Green" />
+
+            <Label Text="ThumbImageSource" />
+            <Slider MinimumTrackColor="Gray" MaximumTrackColor="Gray" ThumbColor="Gray" ThumbImageSource="plane.png" />
+
+            <Label Text="Eventos: ValueChanged, DragStarted, DragCompleted" />
+            <Slider MinimumTrackColor="Gray" MaximumTrackColor="Gray" ThumbColor="Gray" 
+                    ValueChanged="Slider_ValueChanged"
+                    DragStarted="Slider_DragStarted"
+                    DragCompleted="Slider_DragCompleted"
+                    />
+
+            <Label x:Name="ValueChanged" Text="-" />
+            <Label x:Name="DragStarted" Text="-" />
+            <Label x:Name="DragCompleted" Text="-"/>
+
+            <Label Text="Dica (Incremento)" />
+            <Slider MinimumTrackColor="Gray" MaximumTrackColor="Gray" ThumbColor="Gray"
+                    Minimum="0"
+                    Maximum="25"
+                    ValueChanged="Slider_ValueChanged_Step"/>
+
+            <Label x:Name="ValueChangedStep" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

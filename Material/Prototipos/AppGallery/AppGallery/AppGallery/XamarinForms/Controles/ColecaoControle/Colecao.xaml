@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Controles.ColecaoControle.Colecao">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="ItemsSource, IsGrouped, EmptyView, SwipeView, RefreshView, RemainingItemsThreshold(InfinityScroll), ItemsLayout, ItemSizingStrategy" />
+            <RefreshView Refreshing="Lista01_Refreshing">
+                <CollectionView ItemSizingStrategy="MeasureAllItems" x:Name="Lista01" IsGrouped="True" RemainingItemsThreshold="2" RemainingItemsThresholdReached="Lista01_RemainingItemsThresholdReached">
+                    <!--
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10" />
+                    </CollectionView.ItemsLayout>
+                    -->
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Horizontal" Span="4" VerticalItemSpacing="1" HorizontalItemSpacing="1"/>
+                    </CollectionView.ItemsLayout>
+                    
+                    <CollectionView.EmptyView>
+                        <Label Text="Nenhum resultado encontrado!" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                    </CollectionView.EmptyView>
+                    <CollectionView.GroupHeaderTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding Nome}" FontSize="36" TextColor="Accent" />
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.GroupHeaderTemplate>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <SwipeView>
+                                <SwipeView.TopItems>
+                                    <SwipeItems>
+                                        <SwipeItem Text="+Detalhes" BackgroundColor="#4D94FF" CommandParameter="{Binding .}" Invoked="SwipeItem_Invoked" />
+                                    </SwipeItems>
+                                </SwipeView.TopItems>
+                            
+                                <StackLayout BackgroundColor="#F2F2F2" HorizontalOptions="Start" WidthRequest="150" Padding="10">
+                                    <Label Text="{Binding Nome}" FontAttributes="Bold" TextColor="Black" />
+                                    <Label Text="{Binding Motor}" TextColor="Gray" />
+                                </StackLayout>
+                            </SwipeView>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

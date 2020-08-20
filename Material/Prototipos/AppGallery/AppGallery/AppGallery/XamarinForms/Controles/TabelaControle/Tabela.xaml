@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Controles.TabelaControle.Tabela">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="TableView" />
+            <TableView HasUnevenRows="True">
+                <TableRoot>
+                    <TableSection Title="Configuração">
+                        <ViewCell>
+                            <StackLayout Padding="18, 10" Orientation="Horizontal">
+                                <Label Text="Habilitar backup na nuvem" VerticalTextAlignment="Center" />
+                                <Switch HorizontalOptions="EndAndExpand" />
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout  Padding="18, 3" Orientation="Horizontal">
+                                <Label Text="Senha de criptografia do backup" VerticalTextAlignment="Center" />
+                                <Entry IsPassword="True" HorizontalOptions="FillAndExpand" />
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

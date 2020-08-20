@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Controles.ColecaoControle.Colecao2">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="SelectionMode" />
+            <Label Text="-" x:Name="LblModelosSelecionados" />
+            <CollectionView SelectionMode="Multiple" SelectionChanged="Lista01_SelectionChanged" ItemSizingStrategy="MeasureAllItems" x:Name="Lista01" IsGrouped="True">
+                    <CollectionView.EmptyView>
+                        <Label Text="Nenhum resultado encontrado!" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                    </CollectionView.EmptyView>
+                    <CollectionView.GroupHeaderTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding Nome}" FontSize="36" TextColor="Accent" />
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.GroupHeaderTemplate>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="10">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="Transparent" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="Selected">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="#B6D9F1" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                                    <Label Text="{Binding Nome}" FontAttributes="Bold" TextColor="Black" />
+                                    <Label Text="{Binding Motor}" TextColor="Gray" />
+                                </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

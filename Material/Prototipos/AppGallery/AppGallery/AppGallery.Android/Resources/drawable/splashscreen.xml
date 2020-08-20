@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+  <item>
+    <color android:color="@color/ic_launcher_background"/>
+  </item>
+  <item android:bottom="150dp">
+    <bitmap
+        android:src="@drawable/logo"
+        android:tileMode="disabled"
+        android:gravity="center"/>
+  </item>
+  <item android:top="60dp">
+    <bitmap
+        android:src="@drawable/logotexto"
+        android:tileMode="disabled"
+        android:gravity="center"/>
+  </item>
+</layer-list>

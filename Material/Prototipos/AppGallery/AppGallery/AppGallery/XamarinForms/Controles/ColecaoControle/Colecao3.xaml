@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:data="clr-namespace:AppGallery.XamarinForms.Controles.ColecaoControle"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Controles.ColecaoControle.Colecao3">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            
+            <DataTemplate x:Key="templateNormal">
+                <StackLayout Padding="10">
+                    <Label Text="{Binding Nome}" FontAttributes="Bold" TextColor="Black" />
+                    <Label Text="{Binding Motor}" TextColor="Gray" />
+                    <Button Text="Edição" BackgroundColor="#FF7272" TextColor="White" Clicked="BotaoEdicao" CommandParameter="{Binding .}" />
+                </StackLayout>
+            </DataTemplate>
+            <DataTemplate x:Key="templateTurbo">
+                <Grid Padding="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Text="{Binding Nome}" FontAttributes="Bold" TextColor="Black" />
+                    <Label Text="{Binding Motor}" Grid.Column="1" TextColor="Red" />
+                </Grid>
+            </DataTemplate>
+
+            <data:ModeloDataTemplateSelector x:Key="modeloDataTemplateSelector" TemplateNormal="{StaticResource templateNormal}" TemplateTurbo="{StaticResource templateTurbo}" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="DataTemplate, DataTemplateSelector, Botão dentro da ListView/CollectionView" />
+            <CollectionView ItemTemplate="{StaticResource modeloDataTemplateSelector}" x:Name="Lista01" IsGrouped="True">
+                <CollectionView.EmptyView>
+                    <Label Text="Nenhum resultado encontrado!" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                </CollectionView.EmptyView>
+                <CollectionView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding Nome}" FontSize="36" TextColor="Accent" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.GroupHeaderTemplate>                
+            </CollectionView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
