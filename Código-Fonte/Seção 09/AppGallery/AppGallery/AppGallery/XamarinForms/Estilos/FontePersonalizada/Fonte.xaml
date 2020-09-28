@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="Font"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Estilos.FontePersonalizada.Fonte">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <controls:TitleComponentView Name="FontFamily" />
+            <Label Text="Font" />
+
+            <Label Text="Fonte - Normal" FontSize="24" />
+            <Label Text="Fonte - GothamLight" FontSize="24"  FontFamily="GothamLight" />
+            <Label Text="Fonte - Gotham" FontSize="24"  FontFamily="Gotham" />            
+            <Label Text="Fonte - GothamBlack" FontSize="24" FontFamily="GothamBlack" />
+
+            <Label Text="&#xf270;" FontSize="48" FontFamily="FontAwesome" HorizontalOptions="CenterAndExpand" TextColor="Orange" />
+            <Label Text="&#xf368;" FontSize="84" FontFamily="FontAwesome" HorizontalOptions="CenterAndExpand" TextColor="Purple" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

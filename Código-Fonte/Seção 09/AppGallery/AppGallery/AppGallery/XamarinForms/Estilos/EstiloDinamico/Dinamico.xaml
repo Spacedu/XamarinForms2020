@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="DynamicStyle"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Estilos.EstiloDinamico.Dinamico">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="PrimaryColor">#E74C3C</Color>
+            
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+
+            <Style x:Key="ButtonStyleDinamic" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <controls:SubtitleComponentView Properties="DynamicStyle">
+                <controls:SubtitleComponentView.Component>
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Entry x:Name="LblCorHex" Placeholder="Digite uma cor hexadecimal" HorizontalOptions="FillAndExpand" />
+                            <Button Text="OK" BackgroundColor="LightGray" WidthRequest="50" Clicked="BtnAlterarPrimaryColor"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Button Text="Static" Style="{StaticResource ButtonStyle}" BackgroundColor="{StaticResource PrimaryColor}" />
+                            <Button Text="Dynamic" Style="{DynamicResource ButtonStyle}" BackgroundColor="{DynamicResource PrimaryColor}" />
+                        </StackLayout>
+                    </StackLayout>
+                </controls:SubtitleComponentView.Component>
+            </controls:SubtitleComponentView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

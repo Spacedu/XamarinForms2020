@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="WebView"
+             mc:Ignorable="d"
+             Padding="10"
+             x:Class="AppGallery.XamarinForms.Controles.NavegadorControle.Navegador">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <controls:TitleComponentView
+                    Name="WebView"
+                    Properties="Source(URL, HTML, HTML de arquivo), CanGoBack, CanGoForward"
+                    Events="Navigated, Navigating"
+                    Methods="GoBack, GoForward, Reload"
+                    Observation="Habilitar internet (Android e UWP), Desabilitar o ATS no info.plist, Adicionar no AndroidManifest dentro do Application android:usesCleartextTraffic='true'"
+                    />
+
+                <Frame Margin="0, 20, 0, 0" BorderColor="Gray" Padding="1" IsVisible="True">
+                    <WebView x:Name="WebView1" Source="https://www.google.com" HorizontalOptions="FillAndExpand" HeightRequest="300"></WebView>
+                </Frame>
+                <Frame Margin="0, 20, 0, 0" BorderColor="Gray" Padding="1" IsVisible="True">
+                    <WebView x:Name="WebView2" HorizontalOptions="FillAndExpand" HeightRequest="300"></WebView>
+                </Frame>
+
+                <Frame BorderColor="Gray" Padding="5">
+                    <StackLayout>
+                        <Label x:Name="LblUrl" Text="URL" HorizontalTextAlignment="Center" FontSize="18" />
+                        <StackLayout Orientation="Horizontal">
+                            <Button Text="Voltar" Clicked="BotaoVoltar" BackgroundColor="#F2F2F2" HorizontalOptions="FillAndExpand" />
+                            <Button Text="Atualizar" Clicked="BotaoAtualizar" BackgroundColor="#F2F2F2" HorizontalOptions="FillAndExpand"/>
+                            <Button Text="Próximo" Clicked="BotaoProximo" BackgroundColor="#F2F2F2" HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Frame BorderColor="Gray" Padding="1" IsVisible="True">
+                    <WebView Navigated="Carregado" Navigating="Carregando" x:Name="WebView3" HorizontalOptions="FillAndExpand" HeightRequest="300"></WebView>
+                </Frame>
+                <Frame BorderColor="Gray" Padding="5">
+                    <Label x:Name="LblStatus" />
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

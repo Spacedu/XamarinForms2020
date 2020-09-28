@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="Detectar (Platf./Idiom)"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Classes.Detectar.Detectar">
+    <ContentPage.Content>
+        <StackLayout>
+            <controls:TitleComponentView
+                Name="OnPlatform/OnIdiom"
+                />
+
+            <Label Text='{OnPlatform Android="SO: Android", iOS="SO: iOS", UWP="SO: UWP"}' 
+                   BackgroundColor="{OnPlatform Android=LightGreen, iOS=LightGray, UWP=AliceBlue}"
+                   Padding="20" Margin="10, 0">
+                <Label.TextColor>
+                    <OnPlatform x:TypeArguments="Color">
+                        <On Platform="Android" Value="Green" />
+                        <On Platform="iOS" Value="Gray" />
+                        <On Platform="UWP" Value="Blue" />
+                    </OnPlatform>
+                </Label.TextColor>
+            </Label>
+
+            <Label Text='{OnIdiom Phone="Smartphone", Tablet="Tablet", Desktop="PC"}' Padding="20" Margin="10, 0">
+                <Label.BackgroundColor>
+                    <OnIdiom x:TypeArguments="Color">
+                        <OnIdiom.Phone>LightGreen</OnIdiom.Phone>
+                        <OnIdiom.Tablet>LightGray</OnIdiom.Tablet>
+                        <OnIdiom.Desktop>LightBlue</OnIdiom.Desktop>
+                    </OnIdiom>
+                </Label.BackgroundColor>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

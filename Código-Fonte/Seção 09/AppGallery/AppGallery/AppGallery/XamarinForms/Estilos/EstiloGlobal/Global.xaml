@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="GlobalStyle"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Estilos.EstiloGlobal.Global">
+    <ContentPage.Content>
+        <StackLayout>
+            <controls:TitleComponentView
+                Name="GlobalStyle" />
+            <Button Text="Botão 01" Style="{StaticResource EstiloGlobalBotao}"/>
+            <Button Text="Botão 02" Style="{StaticResource EstiloGlobalBotao}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

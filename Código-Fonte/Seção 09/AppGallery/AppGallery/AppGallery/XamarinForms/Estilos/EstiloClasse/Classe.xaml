@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="StyleClass"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Estilos.EstiloClasse.Classe">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            
+            <Style TargetType="Button" Class="Arredondar">
+                <Setter Property="CornerRadius" Value="30" />
+                <Setter Property="Margin" Value="10" />
+            </Style>
+            <Style TargetType="Button" Class="Perigo">
+                <Setter Property="BackgroundColor" Value="#E74C3C" />
+            </Style>
+            
+            <Style TargetType="Button" Class="Sucesso">
+                <Setter Property="BackgroundColor" Value="#27AE60" />
+            </Style>
+            
+            <Style TargetType="Button" Class="TextoBranco">
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+            
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <controls:SubtitleComponentView Properties="StyleClass">
+                <controls:SubtitleComponentView.Component>
+                    <StackLayout>
+                        <Button Text="StyleClass01" StyleClass="Arredondar, Sucesso, TextoBranco" />
+                        <Button Text="StyleClass02" StyleClass="Perigo, TextoBranco"/>
+                    </StackLayout>
+                </controls:SubtitleComponentView.Component>
+            </controls:SubtitleComponentView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

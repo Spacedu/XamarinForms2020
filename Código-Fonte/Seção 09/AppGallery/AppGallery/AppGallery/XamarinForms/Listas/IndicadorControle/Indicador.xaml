@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="IndicatorView"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Listas.IndicadorControle.Indicador">
+    <ContentPage.Content>
+        <StackLayout>
+            <controls:TitleComponentView 
+                Name="IndicatorView" 
+                Properties="IndicatorsShape, IndicatorColor, IndicatorSize, SelectedIndicatorColor, MaximumVisible" 
+            />
+
+            <CarouselView PeekAreaInsets="50" IndicatorView="IndicadorControle">
+                <CarouselView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>FIAT - Uno</x:String>
+                        <x:String>FIAT - Mobi</x:String>
+                        <x:String>FIAT - Argo</x:String>
+                        <x:String>FORD - Ka</x:String>
+                        <x:String>FORD - Fusion</x:String>
+                        <x:String>FORD - Ecosport</x:String>
+                    </x:Array>
+                </CarouselView.ItemsSource>
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10">
+                            <Frame BorderColor="Gray">
+                                <Label Text="{Binding .}" />
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+
+            <IndicatorView 
+                Margin="0, 0, 0, 10"
+                x:Name="IndicadorControle"
+                IndicatorColor="Gray"
+                IndicatorSize="10"
+                SelectedIndicatorColor="Accent"
+                MaximumVisible="3"
+                HorizontalOptions="CenterAndExpand"
+            >
+                <IndicatorView.IndicatorTemplate>
+                    <DataTemplate>
+                        <Frame CornerRadius="30" IsClippedToBounds="True" WidthRequest="15">
+                            <Image Source="plane.png" />
+                        </Frame>
+                    </DataTemplate>
+                </IndicatorView.IndicatorTemplate>
+            </IndicatorView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

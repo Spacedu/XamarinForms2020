@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    FlyoutBackgroundColor="#707070"
+    <Shell.FlyoutBackground>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#83a4d4" Offset="0.1" />
+            <GradientStop Color="#b6fbff" Offset="1" />
+        </LinearGradientBrush>
+    </Shell.FlyoutBackground>
+-->
+<Shell
+    FlyoutHeaderBehavior="Scroll"
+    FlyoutIcon="{OnPlatform Android='menu', iOS='menu', UWP='Imagens/menu' }"
+    FlyoutBackgroundImage="{OnPlatform Android='background', iOS='background', UWP='Imagens/background' }"
+    FlyoutBackgroundImageAspect="Fill"
+    FlyoutBackdrop="#95FF0000"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:paginas="clr-namespace:AppGallery.XamarinForms.Concha.Hamburgue.Paginas"
+    x:Class="AppGallery.XamarinForms.Concha.Hamburgue.AppShellFlyoutItem">
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="FlyoutBaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="LightGray" />
+                <Setter Property="Shell.ForegroundColor" Value="#707070" />
+                <Setter Property="Shell.UnselectedColor" Value="#A2A2A2" />
+                <Setter Property="Shell.TitleColor" Value="#707070" />
+
+                <!--
+                <Setter Property="Shell.TabBarBackgroundColor" Value="LightGray" />
+                <Setter Property="Shell.TabBarTitleColor" Value="#707070" />
+                -->
+            </Style>
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource FlyoutBaseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+    
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid ColumnDefinitions="0.8*, 0.2*">
+                <Label Text="{Binding Title}" Margin="10" VerticalTextAlignment="Center" />
+                <Image Grid.Column="1" Source="{Binding FlyoutIcon}" Margin="10" HeightRequest="30" />
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <Grid ColumnDefinitions="0.8*, 0.2*">
+                <Label Text="{Binding Title}" Margin="10" VerticalTextAlignment="Center" />
+                <Image Grid.Column="1" Source="{Binding Icon}" Margin="10" HeightRequest="30" />
+            </Grid>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+    
+    
+    <Shell.FlyoutHeader>
+        <ContentView>
+            <Image Source="https://s2.glbimg.com/slaVZgTF5Nz8RWqGrHRJf0H1PMQ=/0x0:800x450/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2019/U/e/NTegqdSe6SoBAoQDjKZA/cachorro.jpg" />
+        </ContentView>
+    </Shell.FlyoutHeader>
+    <!--
+    (URI) Rotas Absolutas:
+    domesticos > populares > gato
+    Shell.Current.GoToAsync("//domesticos/populares/gato")
+    
+    Rotas Relativas:
+    Cachorro: Shell.Current.GoToAsync("../gato")
+    
+    
+    Shell.Current.GoToAsync("///gato2")
+    Shell.Current.GoToAsync("..")
+    -->
+    <FlyoutItem Title="Domésticos" Route="domesticos" Icon="{OnPlatform Android='dog', iOS='dog', UWP='Imagens/dog.png' }">
+        <Tab Title="Populares" Route="populares" Icon="{OnPlatform Android='dog', iOS='dog', UWP='Imagens/dog.png' }">
+            <ShellContent Title="Cachorro" Route="cachorro" Icon="{OnPlatform Android='dog', iOS='dog', UWP='Imagens/dog.png' }" ContentTemplate="{DataTemplate paginas:Cachorro}" />
+            <ShellContent Title="Gato" Route="gato" Icon="{OnPlatform Android='happy', iOS='happy', UWP='Imagens/happy.png' }" ContentTemplate="{DataTemplate paginas:Gato}" />
+        </Tab>
+        <ShellContent Title="Peixe" Route="peixe" Icon="{OnPlatform Android='fish', iOS='fish', UWP='Imagens/fish.png' }" ContentTemplate="{DataTemplate paginas:Peixe}" />
+    </FlyoutItem>
+    
+    
+    <FlyoutItem Title="Todos os anímais" FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Cachorro" Icon="{OnPlatform Android='dog', iOS='dog', UWP='Imagens/dog.png' }" ContentTemplate="{DataTemplate paginas:Cachorro}" />
+        <ShellContent Title="Gato" Route="gato2" Icon="{OnPlatform Android='happy', iOS='happy', UWP='Imagens/happy.png' }" ContentTemplate="{DataTemplate paginas:Gato}" />
+        <ShellContent Title="Peixe" Icon="{OnPlatform Android='fish', iOS='fish', UWP='Imagens/fish.png' }" ContentTemplate="{DataTemplate paginas:Peixe}" />
+        <ShellContent Title="Tartaruga" Icon="{OnPlatform Android='turtle', iOS='turtle', UWP='Imagens/turtle.png' }" ContentTemplate="{DataTemplate paginas:Tartaruga}" />
+    </FlyoutItem>
+    <ShellContent Title="Tartaruga" Icon="{OnPlatform Android='turtle', iOS='turtle', UWP='Imagens/turtle.png' }" ContentTemplate="{DataTemplate paginas:Tartaruga}" />
+
+    <MenuItem Text="Sair" IconImageSource="{OnPlatform Android='logout', iOS='logout', UWP='Imagens/logout.png' }" Clicked="AbrirAppGallery" />
+</Shell>

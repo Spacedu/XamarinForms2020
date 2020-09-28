@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    Shell.PresentationMode="Modal"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppGallery.XamarinForms.Concha.Hamburgue.Paginas.CachorroDetalhe">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding Nome}"
+                   FontSize="24"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Button Text="Voltar para Listagem" Clicked="Voltar" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

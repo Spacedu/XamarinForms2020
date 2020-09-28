@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Caminhos (Paths)"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             x:Class="AppGallery.XamarinForms.XF47.Caminhos">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <controls:TitleComponentView 
+                        Name="Path"
+                    Properties="Data, RenderTransform"
+                        />
+
+                <controls:SubtitleComponentView Properties="Data, RenderTransform">
+                    <controls:SubtitleComponentView.Component>
+                        <Grid>
+                            <Path 
+                    Data="M74,132.379s40.942-18.715,41.587-50.015S73.945,44.61,74,82.364c-.268-37.753-39.769-34.527-40.091,0S74,132.379,74,132.379Z"
+                    Fill="#FF6565"
+                    >
+                                <Path.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleX="0.7" ScaleY="0.7" />
+                                        <TranslateTransform Y="-15" />
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                            </Path>
+                            <Path 
+                    Data="M74,132.379s40.942-18.715,41.587-50.015S73.945,44.61,74,82.364c-.268-37.753-39.769-34.527-40.091,0S74,132.379,74,132.379Z"
+                    
+                    Fill="#8BAEFF"
+                    >
+                                <Path.RenderTransform>
+                                    <TransformGroup>
+                                        <SkewTransform AngleY="20" />
+                                        <TranslateTransform Y="-40" />
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                            </Path>
+
+                            <Path
+                    Data="M74,132.379s40.942-18.715,41.587-50.015S73.945,44.61,74,82.364c-.268-37.753-39.769-34.527-40.091,0S74,132.379,74,132.379Z"
+                    Fill="#57D95F"
+                    >
+                                <Path.RenderTransform>
+                                    <TransformGroup>
+                                        <TranslateTransform X="150" Y="20" />
+                                        <ScaleTransform ScaleX="0.5" ScaleY="0.5" />
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                            </Path>
+                        </Grid>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+                
+
+                <controls:SubtitleComponentView Properties="GeomtryGroup, EllipseGeometry, RectangleGeometry">
+                    <controls:SubtitleComponentView.Component>
+                        <Path Fill="#8BAEFF" HorizontalOptions="Center">
+                            <Path.Data>
+                                <GeometryGroup>
+                                    <EllipseGeometry RadiusX="45" RadiusY="25" Center="180, 30" />
+                                    <EllipseGeometry RadiusX="45" RadiusY="25" Center="150, 30" />
+                                    <RectangleGeometry Rect="0,0,100,50" />
+                                </GeometryGroup>
+                            </Path.Data>
+                        </Path>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+                
+
+                <controls:SubtitleComponentView Properties="Image.Clip, Geometry, EllipseGeometry">
+                    <controls:SubtitleComponentView.Component>
+                        <Image Source="https://img.ibxk.com.br/2017/06/22/22100428046161.jpg">
+                            <Image.Clip>
+                                <EllipseGeometry RadiusX="75" RadiusY="75" Center="150, 100" />
+                            </Image.Clip>
+                        </Image>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+            
+            
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

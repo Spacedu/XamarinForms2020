@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "lBGNyGYJ2BuaKmuK9HVqSf7J1G37JezoJD3oC6JZ1u6mvUsMICqJAdkkFcAuPkCo1n4S5JqjKoJ3eQQVyjdfww==",
+  "success": true,
+  "projectFilePath": "C:\\Dev\\AppGallery\\AppGallery\\AppGallery.iOS\\AppGallery.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Elias\\.nuget\\packages\\leojharris.xforms.plugin.enhancedentry\\1.0.6\\leojharris.xforms.plugin.enhancedentry.1.0.6.nupkg.sha512",
+    "C:\\Users\\Elias\\.nuget\\packages\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "C:\\Users\\Elias\\.nuget\\packages\\xamarin.forms\\4.8.0.1269\\xamarin.forms.4.8.0.1269.nupkg.sha512",
+    "C:\\Users\\Elias\\.nuget\\packages\\xamarin.forms.visual.material\\4.8.0.1269\\xamarin.forms.visual.material.4.8.0.1269.nupkg.sha512",
+    "C:\\Users\\Elias\\.nuget\\packages\\xamarin.ios.materialcomponents\\92.0.0\\xamarin.ios.materialcomponents.92.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

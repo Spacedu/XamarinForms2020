@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage Title="Cachorro" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppGallery.XamarinForms.Concha.Abas.Paginas.Cachorro">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Cachorro!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <Button Text="Abrir AppGallery (Início)" Clicked="AbrirAppGallery" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

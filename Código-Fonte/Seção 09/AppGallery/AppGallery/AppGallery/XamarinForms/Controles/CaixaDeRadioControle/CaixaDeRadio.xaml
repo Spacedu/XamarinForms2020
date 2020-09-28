@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="RadioButton"
+             Padding="10"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Controles.CaixaDeRadioControle.CaixaDeRadio">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <controls:SubtitleComponentView Properties="IsChecked, Text, TextColor">
+                <controls:SubtitleComponentView.Component>
+                    <StackLayout>
+                        <RadioButton IsChecked="True" Text="C#" TextColor="Blue" FontFamily="sans-serif-thin"/>
+                        <RadioButton IsChecked="False" Text="PHP" TextColor="Red" FontFamily="sans-serif-light"/>
+                        <RadioButton IsChecked="False" Text="Java" TextColor="Green"/>
+                    </StackLayout>
+                </controls:SubtitleComponentView.Component>
+            </controls:SubtitleComponentView>
+
+            <controls:SubtitleComponentView Properties="GroupName" Events="CheckedChanged">
+                <controls:SubtitleComponentView.Component>
+                    <StackLayout>
+                        <RadioButton Text="JavaScript" GroupName="Frontend" CheckedChanged="RadioButton_CheckedChanged"/>
+                        <RadioButton Text="SASS"  GroupName="Frontend" CheckedChanged="RadioButton_CheckedChanged"/>
+                        <RadioButton Text="HTML"  GroupName="Frontend" CheckedChanged="RadioButton_CheckedChanged"/>
+
+                        <Label x:Name="lblInformativo" />
+                    </StackLayout>
+                </controls:SubtitleComponentView.Component>
+            </controls:SubtitleComponentView>            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

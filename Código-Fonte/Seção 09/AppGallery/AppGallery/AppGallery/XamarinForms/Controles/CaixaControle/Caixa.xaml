@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="BoxView"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Controles.CaixaControle.Caixa">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <controls:TitleComponentView Name="BoxView" Properties="Color, CornerRadius" />
+                
+                <BoxView Color="Black" HorizontalOptions="Center" WidthRequest="100" HeightRequest="100" />
+                <BoxView Color="Black" HorizontalOptions="Center" WidthRequest="30" HeightRequest="100" />
+                <BoxView Color="Black" HorizontalOptions="Center" WidthRequest="1" HeightRequest="100" />
+
+                <BoxView Color="Black" CornerRadius="5" HorizontalOptions="Center" WidthRequest="100" HeightRequest="100" />
+                <BoxView Color="Black" CornerRadius="50" HorizontalOptions="Center" WidthRequest="100" HeightRequest="100" />
+                <BoxView Color="Black" CornerRadius="15" HorizontalOptions="Center" WidthRequest="30" HeightRequest="100" />            
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

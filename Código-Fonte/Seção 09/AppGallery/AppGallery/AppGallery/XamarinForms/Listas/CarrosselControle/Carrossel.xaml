@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="CarouselView"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Listas.CarrosselControle.Carrossel">
+    <ContentPage.Content>
+        <StackLayout>
+            <controls:TitleComponentView
+                Name="CarouselView"
+                Properties="ItemsSource, ItemTemplate, EmptyView, PeekAreaInsets, RemainingItemsThreshold, ItemsLayout"
+                Events="RemainingItemsThresholdReached, CurrentItemChanged, PositionChanged"
+            />
+            <Label x:Name="LblPosition" />
+            <Label x:Name="LblItem" />
+            <Label x:Name="LblScroll" />
+            <CarouselView Scrolled="Carrossel01_Scrolled" CurrentItemChanged="Carrossel01_CurrentItemChanged" PositionChanged="Carrossel01_PositionChanged" x:Name="Carrossel01" Position="1" PeekAreaInsets="50" RemainingItemsThreshold="0" RemainingItemsThresholdReached="Carrossel01_RemainingItemsThresholdReached">
+                <!--
+                <CarouselView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" />
+                </CarouselView.ItemsLayout>
+                -->
+                <CarouselView.EmptyView>
+                    <StackLayout>
+                        <Label Text="Nenhum registro!" FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+                    </StackLayout>
+                </CarouselView.EmptyView>
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10">
+                        <Frame BorderColor="Gray">
+                            <StackLayout>
+                                <Label Text="{Binding Nome}" TextColor="Black" FontAttributes="Bold" FontSize="18"/>
+                                <Label Text="{Binding Cargo}" TextColor="Gray" FontSize="12" />
+                                <Label Text="{Binding Descricao}" FontSize="8" TextColor="Gray" />
+                            </StackLayout>
+                        </Frame>
+                        </StackLayout>
+                    </DataTemplate>                    
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

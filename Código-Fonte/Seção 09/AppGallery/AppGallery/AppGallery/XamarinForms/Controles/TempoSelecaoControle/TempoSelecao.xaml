@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="TimePicker"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Controles.TempoSelecaoControle.TempoSelecao">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <controls:SubtitleComponentView Properties="Time, Format">
+                    <controls:SubtitleComponentView.Component>
+                        <TimePicker Time="14:15" Format="HH:mm" />
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+
+                <controls:SubtitleComponentView Properties="TextColor, FontFamily, FontSize, FontAttributes, CharacterSpacing">
+                    <controls:SubtitleComponentView.Component>
+                        <TimePicker TextColor="Blue" FontFamily="sans-serif-light" FontSize="18" FontAttributes="Italic" CharacterSpacing="2" />
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Events="PropertyChanged">
+                    <controls:SubtitleComponentView.Component>
+                        <StackLayout>
+                            <TimePicker PropertyChanged="TimePicker_PropertyChanged" />
+                            <Label x:Name="lblInformativo" />
+                        </StackLayout>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>            
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

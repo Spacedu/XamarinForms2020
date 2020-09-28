@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="Gesture"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Gestos.Gestos">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <controls:TitleComponentView 
+                    Name="Gesture" 
+                    Properties="TapGestureRecognizer, PanGestureRecognizer, PinchGestureRecognizer, SwipeGestureRecognizer"
+                    />
+
+                <Label Text="Toque (Tap)" Margin="10, 0" FontSize="24" Padding="10" BackgroundColor="LightGray">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Frame Margin="10">
+                    <Label Text="-" x:Name="LblTap" />
+                </Frame>
+
+                <Label Text="ToqueLongo (Pan)" Margin="10, 0" FontSize="24" Padding="10" BackgroundColor="LightGray">
+                    <Label.GestureRecognizers>
+                        <PanGestureRecognizer PanUpdated="PanGestureRecognizer_PanUpdated" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Frame Margin="10">
+                    <Label Text="-" x:Name="LblPan" />
+                </Frame>
+
+                <Label Text="Pinça (Pinch)" Margin="10, 0" FontSize="24" Padding="10" BackgroundColor="LightGray">
+                    <Label.GestureRecognizers>
+                        <PinchGestureRecognizer PinchUpdated="PinchGestureRecognizer_PinchUpdated" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Frame Margin="10">
+                    <Label Text="-" x:Name="LblPinch" />
+                </Frame>
+
+                <Label Text="Arrastar (Swipe)" Margin="10, 0" FontSize="24" Padding="10" BackgroundColor="LightGray">
+                    <Label.GestureRecognizers>
+                        <SwipeGestureRecognizer Direction="Left" Swiped="SwipeGestureRecognizer_Swiped" />
+                        <SwipeGestureRecognizer Direction="Right" Swiped="SwipeGestureRecognizer_Swiped" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Frame Margin="10">
+                    <Label Text="-" x:Name="LblSwipe" />
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

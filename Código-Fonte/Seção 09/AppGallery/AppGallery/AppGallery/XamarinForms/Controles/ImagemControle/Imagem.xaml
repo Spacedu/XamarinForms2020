@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ext="clr-namespace:AppGallery.XamarinForms.Controles.ImagemControle"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="Image"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Controles.ImagemControle.Imagem">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <controls:SubtitleComponentView Properties="Source:Resource">
+                    <controls:SubtitleComponentView.Component>
+                        <!-- Recurso -->
+                        <Image x:Name="Imagem01" 
+                           Source="{ext:ImageResource AppGallery.XamarinForms.Controles.ImagemControle.background.png}" 
+                        />
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="Source:File, Aspect">
+                    <controls:SubtitleComponentView.Component>
+                        <StackLayout>
+                            <!-- Arquivo -> Imagens dentro dos projetos especificos do SO -->
+                            <Image Source="xamarin.png" Aspect="Fill" />
+                            <Image Source="xamarin.png" Aspect="AspectFit" BackgroundColor="Yellow" HorizontalOptions="Center" WidthRequest="150" HeightRequest="50" />
+                        </StackLayout>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="Source:Uri, Aspect">
+                    <controls:SubtitleComponentView.Component>
+                        <StackLayout>
+                            <Image
+                                Aspect="AspectFill"
+                                HorizontalOptions="Center" WidthRequest="50" HeightRequest="100"
+                                Source="https://blog.construtoralaguna.com.br/wp-content/uploads/2017/08/Lago-de-Braies-Alpes-Italia-Construtora-Laguna.jpg" />
+                        </StackLayout>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
