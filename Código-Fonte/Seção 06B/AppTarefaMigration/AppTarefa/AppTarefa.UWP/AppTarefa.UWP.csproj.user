@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Source>C:\XamarinForms2020\Material\Seção 06\SplashScreen\UWP\Icone.png</Source>
+    <SmallTileSource>C:\XamarinForms2020\Material\Seção 06\SplashScreen\UWP\Icone.png</SmallTileSource>
+    <MediumTileSource>C:\XamarinForms2020\Material\Seção 06\SplashScreen\UWP\Icone.png</MediumTileSource>
+    <WideTileSource>C:\XamarinForms2020\Material\Seção 06\SplashScreen\UWP\Icone.png</WideTileSource>
+    <LargeTileSource>C:\XamarinForms2020\Material\Seção 06\SplashScreen\UWP\Icone.png</LargeTileSource>
+    <AppIconSource>C:\XamarinForms2020\Material\Seção 06\SplashScreen\UWP\Icone.png</AppIconSource>
+    <SplashScreenSource>C:\XamarinForms2020\Material\Seção 06\SplashScreen\UWP\Icone.png</SplashScreenSource>
+    <PackageLogoSource>C:\XamarinForms2020\Material\Seção 06\SplashScreen\UWP\Icone.png</PackageLogoSource>
+  </PropertyGroup>
+</Project>

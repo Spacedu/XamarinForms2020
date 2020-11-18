@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:conversor="clr-namespace:AppTarefa.Conversor"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#F5F6FA"
+             x:Class="AppTarefa.Telas.Listar">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <conversor:TachadoConversor x:Key="Tachado" />
+            <conversor:PrioridadeConversor x:Key="Prioridade" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Label Margin="20, 40, 0, 0" VerticalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span x:Name="DiaDaSemana" Text="-" FontFamily="MontserratRegular" FontSize="20" TextColor="Black" />
+                            <Span Text="&#10;" />
+                            <Span x:Name="QuantidadeTarefas" Text="0" FontFamily="MontserratThin" FontSize="14" TextColor="#888888" />
+                            <Span Text=" tarefas" FontFamily="MontserratThin" FontSize="14" TextColor="#888888" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Frame Grid.Column="1" WidthRequest="{OnPlatform UWP=75}" HeightRequest="{OnPlatform UWP=75}" HorizontalOptions="{OnPlatform UWP=End}" VerticalOptions="{OnPlatform UWP=Center}" Margin="10, 20, 20, 0" BackgroundColor="{StaticResource Azul}" CornerRadius="20" HasShadow="False" Padding="0">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="AbrirCalendario" />
+                    </Frame.GestureRecognizers>
+                    <StackLayout VerticalOptions="Center">
+                        <DatePicker x:Name="DPCalendario" DateSelected="DateSelectedAction" IsVisible="{OnPlatform UWP=True, Android=False, iOS=False}" WidthRequest="0" HeightRequest="0" HorizontalOptions="Start"  VerticalOptions="Start" />
+                        <Label TextColor="White" HorizontalTextAlignment="Center">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span x:Name="Dia" Text="-" FontSize="20" FontFamily="MontserratMedium" />
+                                    <Span Text="&#10;" />
+                                    <Span x:Name="Mes" Text="-" FontSize="14" FontFamily="MontserratLight"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
+                </Frame>
+            </Grid>
+            
+            <Frame HasShadow="False" CornerRadius="30" TranslationY="30" Grid.Row="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    
+
+                    <CollectionView x:Name="CVListaDeTarefas" EmptyView="Nenhuma tarefa">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <SwipeView BackgroundColor="White">
+                                    <SwipeView.RightItems>
+                                        <SwipeItems>
+                                            <SwipeItem BackgroundColor="#EE6C4D" Text="Excluir" Invoked="BtnExcluir" CommandParameter="{Binding .}" />
+                                        </SwipeItems>
+                                    </SwipeView.RightItems>
+                                    <Grid Padding="0, 10">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="50" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <CheckBox Color="{StaticResource Azul}" IsChecked="{Binding Finalizada}" CheckedChanged="CheckedChangedAction" />
+                                        <StackLayout Grid.Column="1">
+                                            <StackLayout.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="BtnVisualizar" CommandParameter="{Binding .}" />
+                                            </StackLayout.GestureRecognizers>
+                                            <Label TextDecorations="{Binding Finalizada, Converter={StaticResource Tachado}}" Text="{Binding Nome}" Style="{StaticResource TituloNomeTarefa}" />
+
+                                            <StackLayout Orientation="Horizontal">
+                                                <Ellipse WidthRequest="15" HeightRequest="15" Fill="{Binding Prioridade, Converter={StaticResource Prioridade}}" />
+                                                <Label TextDecorations="{Binding Finalizada, Converter={StaticResource Tachado}}" Style="{StaticResource Horario}">
+                                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Text="{Binding HorarioInicial, StringFormat=\{0:hh\\:mm\}}"  />
+                                                            <Span Text=" - " />
+                                                            <Span Text="{Binding HorarioFinal, StringFormat=\{0:hh\\:mm\}}" />
+                                                        </FormattedString>
+                                                    </Label.FormattedText>
+                                                </Label>
+                                            </StackLayout>
+                                            
+                                        </StackLayout>
+                                        <!--
+                                        <Label x:Name="LblTarefaDetalhe"  Grid.Column="1" LineHeight="1.2">
+                                        -->
+                                    </Grid>
+                                </SwipeView>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+                    <Button Text="+" Clicked="BtnCadastrar" Style="{StaticResource BotaoArredondado}" />
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
