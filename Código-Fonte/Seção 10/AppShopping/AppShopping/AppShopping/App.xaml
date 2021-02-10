@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppShopping.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="White">#FFFFFF</Color>
+            <Color x:Key="Black">#000000</Color>
+            <Color x:Key="LightGray">#F9F9F9</Color>
+            
+            <Color x:Key="TextPrimaryColor">#000000</Color>
+            <Color x:Key="TextSecondColor">#A0A0A0</Color>
+            <Color x:Key="BorderColor">#707070</Color>
+            
+            <Color x:Key="PrimaryColor">#F86237</Color>
+
+            <Color x:Key="SuccessColor">#1BAB42</Color>
+            <Color x:Key="ErrorColor">#F44343</Color>
+
+            <Style TargetType="Element" x:Key="FlyoutBaseStyle">
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource White}" />
+                <Setter Property="Shell.ForegroundColor" Value="{StaticResource PrimaryColor}" />
+                <Setter Property="Shell.NavBarHasShadow" Value="False" />
+                <Setter Property="Shell.TitleColor" Value="{StaticResource PrimaryColor}" />
+                <Setter Property="Shell.UnselectedColor" Value="{StaticResource Black}" />
+            </Style>
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource FlyoutBaseStyle}" />
+            <Style TargetType="ShellContent" BasedOn="{StaticResource FlyoutBaseStyle}" />
+
+            <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+                <Setter Property="BackgroundColor" Value="{StaticResource LightGray}" />
+            </Style>
+
+            <Style TargetType="Frame">
+                <Setter Property="CornerRadius" Value="0" />
+                <Setter Property="BorderColor" Value="{StaticResource BorderColor}" />
+                <Setter Property="Padding" Value="1" />
+                <Setter Property="HasShadow" Value="False" />
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="MontserratRegular" />
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="FontFamily" Value="MontserratRegular" />
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="TextColor" Value="{StaticResource Black}" />
+            </Style>
+
+            <Style TargetType="Label" x:Key="MenuHeaderLabel">
+                <Setter Property="FontFamily" Value="MontserratBold" />
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="TextColor" Value="{StaticResource White}" />
+            </Style>
+
+
+            <Style TargetType="Button" x:Key="PrimaryButton">
+                <Setter Property="FontFamily" Value="MontserratRegular" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="TextColor" Value="{StaticResource Black}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource White}" />
+                <Setter Property="BorderColor" Value="{StaticResource BorderColor}" />
+                <Setter Property="BorderWidth" Value="1" />
+                <Setter Property="CornerRadius" Value="0" />
+            </Style>
+            
+            <Style TargetType="Line">
+                <Setter Property="Stroke" Value="#707070" />
+                <Setter Property="StrokeDashArray" Value="3,3" />
+            </Style>
+
+            <Style TargetType="Label" x:Key="NameEstablishment">
+                <Setter Property="FontFamily" Value="MontserratRegular" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="TextColor" Value="{StaticResource Black}" />
+            </Style>
+            <Style TargetType="Label" x:Key="DescriptionEstablishment">
+                <Setter Property="FontFamily" Value="MontserratLight" />
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="TextColor" Value="{StaticResource TextSecondColor}" />
+            </Style>
+
+            <Style TargetType="Label" x:Key="TitleType">
+                <Setter Property="FontFamily" Value="MontserratRegular" />
+                <Setter Property="FontSize" Value="24" />
+                <Setter Property="TextColor" Value="{StaticResource Black}" />
+            </Style>
+            <Style TargetType="Label" x:Key="TitleName">
+                <Setter Property="FontFamily" Value="MontserratRegular" />
+                <Setter Property="FontSize" Value="36" />
+                <Setter Property="TextColor" Value="{StaticResource PrimaryColor}" />
+                <Setter Property="Margin" Value="0, -5, 0, 0" />
+            </Style>
+            <Style TargetType="Label" x:Key="Subtitle">
+                <Setter Property="FontFamily" Value="MontserratSemiBold" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="TextColor" Value="{StaticResource Black}" />
+            </Style>
+            <Style TargetType="Label" x:Key="SessionTitle">
+                <Setter Property="FontFamily" Value="MontserratRegular" />
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="TextColor" Value="{StaticResource PrimaryColor}" />
+            </Style>
+
+
+            <Style TargetType="Button" x:Key="TicketPaidButton">
+                <Setter Property="FontFamily" Value="MontserratRegular" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="TextColor" Value="{StaticResource PrimaryColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource White}" />
+                <Setter Property="BorderColor" Value="{StaticResource PrimaryColor}" />
+                <Setter Property="BorderWidth" Value="1" />
+                <Setter Property="CornerRadius" Value="0" />
+            </Style>
+
+
+            <Style TargetType="Entry" x:Key="EntryPayment">
+                <Setter Property="FontFamily" Value="MontserratRegular" />
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="TextColor" Value="{StaticResource Black}" />
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="VerticalOptions" Value="Start" />
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

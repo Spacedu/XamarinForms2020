@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:AppShopping.ViewModels"
+             xmlns:converters="clr-namespace:AppShopping.Libraries.Converters"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:control="clr-namespace:Xamarin.Forms.MaskedEntry;assembly=Xamarin.Forms.MaskedEntry"
+             x:Class="AppShopping.Views.TicketPayment">
+
+    <Shell.TitleView>
+        <ContentView>
+            <Image Source="TitleViewLogo" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="30" />
+        </ContentView>
+    </Shell.TitleView>
+
+    <ContentPage.BindingContext>
+        <viewModels:TicketPaymentViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:PassingTimeConverter x:Key="PassingTimeConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10">
+                <Label Text="Pague o seu" Style="{StaticResource TitleType}" />
+                <Label Text="TICKET" Style="{StaticResource TitleName}" />
+                <!-- Info - Ticket -->
+                <yummy:PancakeView Padding="10" Margin="1" BackgroundColor="White">
+                    <yummy:PancakeView.Border>
+                        <yummy:Border Color="#000000" Thickness="1" DashPattern="4,10" />
+                    </yummy:PancakeView.Border>
+                    <StackLayout>
+                        <Label Style="{StaticResource NameEstablishment}" FontSize="14">
+                            <Label.Text>
+                                <MultiBinding StringFormat="{}Ticket #{0}">
+                                    <Binding Path="Ticket.Number" />
+                                </MultiBinding>
+                            </Label.Text>
+                        </Label>
+
+                        <StackLayout Orientation="Horizontal" Margin="0, 10, 0, 0">
+                            <Label Text="Permanência:" Style="{StaticResource DescriptionEstablishment}" />
+                            <Label Text="{Binding Ticket, Converter={StaticResource PassingTimeConverter}}" Style="{StaticResource DescriptionEstablishment}" />
+                        </StackLayout>
+
+
+                        <Label Style="{StaticResource DescriptionEstablishment}">
+                            <Label.Text>
+                                <MultiBinding StringFormat="{}Entrada: {0}">
+                                    <Binding Path="Ticket.StartDate" />
+                                </MultiBinding>
+                            </Label.Text>
+                        </Label>
+
+                        <Label Style="{StaticResource DescriptionEstablishment}">
+                            <Label.Text>
+                                <MultiBinding StringFormat="{}Saída: {0}">
+                                    <Binding Path="Ticket.EndDate" />
+                                </MultiBinding>
+                            </Label.Text>
+                        </Label>
+
+                        <Label Style="{StaticResource Subtitle}" FontSize="12" >
+                            <Label.Text>
+                                <MultiBinding StringFormat="{}Valor: R$ {0}">
+                                    <Binding Path="Ticket.Price" />
+                                </MultiBinding>
+                            </Label.Text>
+                        </Label>
+                    </StackLayout>
+                </yummy:PancakeView>
+
+                <!-- Cartão de Crédito -->
+                <yummy:PancakeView Padding="10" Margin="1" BackgroundColor="White">
+                    <yummy:PancakeView.Border>
+                        <yummy:Border Color="#000000" Thickness="1" DashPattern="4,10" />
+                    </yummy:PancakeView.Border>
+                    <StackLayout>
+                        <Label Style="{StaticResource NameEstablishment}" FontSize="14" Text="Cartão de Crédito" />
+                        <Label Text="Coloque o cartão para pagar o estacionamento." Style="{StaticResource DescriptionEstablishment}" />
+                        <Label Text="{Binding Messages}" Style="{StaticResource DescriptionEstablishment}" TextColor="Red"/>
+
+                        <Frame Padding="10, 0" HasShadow="False" BorderColor="{StaticResource BorderColor}" CornerRadius="0">
+                            <Entry Placeholder="Nome no cartão" Style="{StaticResource EntryPayment}" Text="{Binding CreditCard.Name}" />
+                        </Frame>
+
+                        <Frame Padding="10, 0" Grid.Column="0" HasShadow="False" BorderColor="{StaticResource BorderColor}" CornerRadius="0">
+                            <Grid ColumnDefinitions="*, 25">
+                                <control:MaskedEntry Keyboard="Numeric" Grid.Column="0" Mask="XXXX XXXX XXXX XXXX" Placeholder="Número do cartão" Style="{StaticResource EntryPayment}" Text="{Binding CreditCard.Number}" />
+                                <ImageButton Command="{Binding CreditCardScanCommand}" Source="photograph" Grid.Column="1" BackgroundColor="Transparent" />
+                            </Grid>                            
+                        </Frame>
+
+                        <Grid ColumnDefinitions="*,*" RowDefinitions="50" >
+                            <Frame Padding="10, 0" Grid.Column="0" HasShadow="False" BorderColor="{StaticResource BorderColor}" CornerRadius="0">
+                                <control:MaskedEntry Keyboard="Numeric" Mask="XX/XX" Placeholder="Validade" Style="{StaticResource EntryPayment}" Text="{Binding CreditCard.Expired}" />
+                            </Frame>
+
+                            <Frame Padding="10, 0" Grid.Column="1" HasShadow="False" BorderColor="{StaticResource BorderColor}" CornerRadius="0">
+                                <control:MaskedEntry Keyboard="Numeric" Mask="XXX" Placeholder="Cod. Segurança" Style="{StaticResource EntryPayment}" Text="{Binding CreditCard.SecurityCode}" />
+                            </Frame>
+                        </Grid>
+
+                        <Frame Padding="10, 0" HasShadow="False" BorderColor="{StaticResource BorderColor}" CornerRadius="0">
+                            <control:MaskedEntry Keyboard="Numeric" Mask="XXX.XXX.XXX-XX" Placeholder="CPF" Text="{Binding CreditCard.Document}" Style="{StaticResource EntryPayment}" />
+                        </Frame>
+                        <Label Text="Usaremos este CPF para emitir nota legal"  Style="{StaticResource DescriptionEstablishment}" />
+                    </StackLayout>
+                </yummy:PancakeView>
+                <Button Text="Pagar" Style="{StaticResource TicketPaidButton}" Command="{Binding PaymentCommand}" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

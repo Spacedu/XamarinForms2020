@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:AppShopping.ViewModels"
+             x:Class="AppShopping.Views.Wifi">
+    <Shell.TitleView>
+        <ContentView>
+            <Image Source="TitleViewLogo" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="30" />
+        </ContentView>
+    </Shell.TitleView>
+    <ContentPage.BindingContext>
+        <viewModels:WifiViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout Padding="10, 10, 10, 0">
+            <Label Text="Novidades" Style="{StaticResource TitleType}" />
+            <Label Text="Para você" Style="{StaticResource TitleName}" />
+
+            <Label Text="{Binding Message}" TextColor="Red" />
+            <Frame Padding="10, 0" Margin="0, 40" HasShadow="False" BorderColor="{StaticResource BorderColor}" CornerRadius="0">
+                <Entry Placeholder="E-mail" Style="{StaticResource EntryPayment}" Text="{Binding Email}" />
+            </Frame>
+
+            <Button Text="Conectar e liberar Wifi" Command="{Binding ConnectToWifiCommand}" HorizontalOptions="Center" Style="{StaticResource TicketPaidButton}" />
+        </StackLayout>
+    </ContentPage.Content>
+
+    
+</ContentPage>

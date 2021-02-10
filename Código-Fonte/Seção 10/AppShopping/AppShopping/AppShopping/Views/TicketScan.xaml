@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:AppShopping.ViewModels"
+             xmlns:control="clr-namespace:Xamarin.Forms.MaskedEntry;assembly=Xamarin.Forms.MaskedEntry"
+             xmlns:behaviors="clr-namespace:AppShopping.Libraries.Behaviors"
+             x:Class="AppShopping.Views.TicketScan">
+
+    <Shell.TitleView>
+        <ContentView>
+            <Image Source="TitleViewLogo" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="30" />
+        </ContentView>
+    </Shell.TitleView>
+
+    <ContentPage.BindingContext>
+        <viewModels:TicketScanViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Label Text="Pague o seu" Style="{StaticResource TitleType}" />
+            <Label Text="TICKET" Style="{StaticResource TitleName}" />
+            <Grid ColumnDefinitions="*, 70" RowDefinitions="50" Margin="0, 15">
+                <Frame Padding="10, 0" HasShadow="False" BorderColor="{StaticResource BorderColor}" CornerRadius="0">
+                    <control:MaskedEntry Text="{Binding TicketNumber}" Mask="XXX XXX XXX XXX" Placeholder="Escanear ticket">
+                        <control:MaskedEntry.Behaviors>
+                            <behaviors:EventToCommandBehavior EventName="TextChanged" Command="{Binding TicketTextChangedCommand}" />
+                        </control:MaskedEntry.Behaviors>
+                    </control:MaskedEntry>
+
+                    <!-- Total de caracteres 15 -->
+                </Frame>
+                <Button Command="{Binding TicketScanCommand}" ImageSource="Camera" Grid.Column="1" Style="{StaticResource PrimaryButton}" />
+            </Grid>
+            <Label Text="{Binding Message}" TextColor="{StaticResource ErrorColor}" />
+
+            <Button Command="{Binding TicketPaidHistoryCommand}" Text="Tickets pagos" Style="{StaticResource TicketPaidButton}" VerticalOptions="EndAndExpand" HorizontalOptions="Center" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

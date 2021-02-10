@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:AppShopping.Views"
+       xmlns:viewModels="clr-namespace:AppShopping.ViewModels"
+       x:Class="AppShopping.Menu">
+
+    <Shell.BindingContext>
+        <viewModels:MenuViewModel />
+    </Shell.BindingContext>
+    <Shell.FlyoutHeader>
+        <Grid Padding="0, 25" BackgroundColor="{StaticResource PrimaryColor}" ColumnDefinitions="1*,2*" RowDefinitions="Auto, Auto">
+            <Image Source="BagWhite" Grid.RowSpan="2" />
+
+            <Label Text="Bem vindo! ao" Grid.Column="1" Style="{StaticResource MenuHeaderLabel}" />
+            <Image Source="LogoWhite" HorizontalOptions="Start" Grid.Column="1" Grid.Row="1" />
+        </Grid>
+    </Shell.FlyoutHeader>
+    <FlyoutItem Title="Principais" FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Lojas" Icon="MenuIconStore" ContentTemplate="{DataTemplate views:Stores}" />
+        <ShellContent Title="Restaurantes" Icon="MenuIconRestaurant" ContentTemplate="{DataTemplate views:Restaurants}" />
+        <ShellContent Title="Cinema" Icon="MenuIconCinema" ContentTemplate="{DataTemplate views:Cinema}" />
+        <ShellContent Title="Ticket" Icon="MenuIconTicket" ContentTemplate="{DataTemplate views:TicketScan}" />
+    </FlyoutItem>
+    
+    <ShellContent Title="Novidades" Icon="MenuIconNews" ContentTemplate="{DataTemplate views:News}" />
+    <!--<ShellContent Title="Como chegar" Icon="MenuIconMaps" ContentTemplate="{DataTemplate views:Stores}" />-->
+    <MenuItem Text="Como chegar" IconImageSource="MenuIconMaps" Command="{Binding OpenMapCommand}" />
+    <ShellContent Title="Wifi" Icon="MenuIconWifi" ContentTemplate="{DataTemplate views:Wifi}" />
+    
+    
+</Shell>

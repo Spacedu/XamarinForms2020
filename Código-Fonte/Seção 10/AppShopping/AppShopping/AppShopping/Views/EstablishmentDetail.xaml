@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:AppShopping.ViewModels"
+             xmlns:converter="clr-namespace:AppShopping.Libraries.Converters"
+             x:Class="AppShopping.Views.EstablishmentDetail">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:EstablishmentTypeConverter x:Key="EstablishmentTypeConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Shell.TitleView>
+        <ContentView>
+            <Image Source="TitleViewLogo" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="30" />
+        </ContentView>
+    </Shell.TitleView>
+
+    <ContentPage.BindingContext>
+        <viewModel:EstablishmentDetailViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="0" Padding="20">
+                <Label Text="{Binding Establishment.Type, Converter={StaticResource EstablishmentTypeConverter}}}" Style="{StaticResource TitleType}" />
+                <Label Text="{Binding Establishment.Name}" Style="{StaticResource TitleName}" />
+                <Frame Padding="10, 10, 10, 30" Margin="0, 26, 0, 0">
+                    <Grid ColumnDefinitions="1*,1*,1*,1*,1*,1*" RowDefinitions="Auto, Auto, 20, Auto, Auto, 20, Auto, Auto">
+                        <Image Source="{Binding Establishment.Logo}" WidthRequest="48" HorizontalOptions="Center" Margin="10" Grid.ColumnSpan="2" />
+                        <Label Text="{Binding Establishment.Name}" HorizontalTextAlignment="Start" VerticalOptions="Center" Style="{StaticResource NameEstablishment}" Grid.Column="2" Grid.ColumnSpan="4" />
+                        <Label Text="{Binding Establishment.Description}" Margin="10, 0" Style="{StaticResource DescriptionEstablishment}" Grid.Row="1" Grid.ColumnSpan="6" />
+                    
+                        <Image Source="pin" HeightRequest="28" VerticalOptions="Center" Grid.Row="3" Grid.RowSpan="2" />
+                        <Label Text="Localização" Style="{StaticResource Subtitle}" Grid.ColumnSpan="5" Grid.Column="1" Grid.Row="3" />
+                        <Label Text="{Binding Establishment.Address}" Style="{StaticResource NameEstablishment}" Grid.ColumnSpan="5" Grid.Column="1" Grid.Row="4" />
+
+                        <Image Source="phone" HeightRequest="28" VerticalOptions="Center" Grid.Row="6" Grid.RowSpan="2" />
+                        <Label Text="Telefone" Style="{StaticResource Subtitle}" Grid.ColumnSpan="5" Grid.Column="1" Grid.Row="6" />
+                        <Label Text="{Binding Establishment.Phone}" Style="{StaticResource NameEstablishment}" Grid.ColumnSpan="5" Grid.Column="1" Grid.Row="7" />
+
+                    </Grid>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

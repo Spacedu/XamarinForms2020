@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:AppShopping.ViewModels"
+             x:Name="CinemaPage"
+             x:Class="AppShopping.Views.Cinema">
+    
+    <Shell.TitleView>
+        <ContentView>
+            <Image Source="TitleViewLogo" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="30" />
+        </ContentView>
+    </Shell.TitleView>
+
+    <ContentPage.BindingContext>
+        <viewModels:CinemaViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Label Text="Filmes no" Style="{StaticResource TitleType}" />
+            <Label Text="CINEMA" Style="{StaticResource TitleName}" />
+
+            <CollectionView ItemsSource="{Binding Films}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <ContentView Padding="0, 5">
+                            <Frame>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={x:Reference CinemaPage}, Path=BindingContext.FilmDetailCommand}" CommandParameter="{Binding .}" />
+                                </Frame.GestureRecognizers>
+                                <Grid ColumnDefinitions="1*,1, 2*" RowDefinitions="140">
+                                    <Image HeightRequest="115" Source="{Binding Cover}" Margin="10" />
+                                    <Line Grid.Column="1" X1="0" X2="0" Y1="0" Y2="140" />
+                                    <StackLayout Grid.Column="2" Margin="10">
+                                        <Label Text="{Binding Name}" Style="{StaticResource NameEstablishment}" />
+                                        <Label Text="{Binding Description}" MaxLines="5" Style="{StaticResource DescriptionEstablishment}" />
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                        </ContentView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
