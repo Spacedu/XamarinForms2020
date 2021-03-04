@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="Entry"
+             Padding="10"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Controles.CampoDeEntradaSimplesControle.CampoDeEntradaSimples">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <controls:SubtitleComponentView Properties="Text, TextColor">
+                    <controls:SubtitleComponentView.Component>
+                        <Entry Text="Texto simples" TextColor="Blue" />
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="Placeholder, PlaceholderColor">
+                    <controls:SubtitleComponentView.Component>
+                        <Entry Placeholder="Digite o seu nome" PlaceholderColor="LightBlue" />
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="MaxLength, BackgroundColor">
+                    <controls:SubtitleComponentView.Component>
+                        <Entry MaxLength="10" BackgroundColor="LightBlue" />
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="IsReadOnly, IsPassword">
+                    <controls:SubtitleComponentView.Component>
+                        <Entry Text="123456" IsReadOnly="True" IsPassword="True"/>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="ClearButtonVisibilty">
+                    <controls:SubtitleComponentView.Component>
+                        <Entry ClearButtonVisibility="WhileEditing" />
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="CharaterSpacing">
+                    <controls:SubtitleComponentView.Component>
+                        <Entry CharacterSpacing="5"/>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="FontFamily, FontSize, FontAttributes">
+                    <controls:SubtitleComponentView.Component>
+                        <Entry FontFamily="sans-serif-thin" FontSize="32" FontAttributes="Italic" />
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="CursorPosition, SelectionLength">
+                    <controls:SubtitleComponentView.Component>
+                        <Entry Text="Elias Ribeiro" CursorPosition="6" SelectionLength="7" />
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="IsSpellCheckEnabled, IsTextPredictionEnabled">
+                    <controls:SubtitleComponentView.Component>
+                        <Entry IsSpellCheckEnabled="True" IsTextPredictionEnabled="True" />
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="Keyboard, KeyboardFlags, ReturnType">
+                    <controls:SubtitleComponentView.Component>
+                        <Entry Keyboard="Email" ReturnType="Go">
+                            <Entry.Keyboard>
+                                <Keyboard x:FactoryMethod="Create">
+                                    <x:Arguments>
+                                        <KeyboardFlags>Suggestions,Spellcheck,CapitalizeCharacter</KeyboardFlags>
+                                    </x:Arguments>
+                                </Keyboard>
+                            </Entry.Keyboard>
+                        </Entry>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Events="Focused, Unfocused, TextChanged, Completed">
+                    <controls:SubtitleComponentView.Component>
+                        <StackLayout>
+                            <Entry Focused="Entry_Focused" Unfocused="Entry_Unfocused" TextChanged="Entry_TextChanged" Completed="Entry_Completed"/>
+                            <Label x:Name="lblFocus" Text="-"/>
+                            <Label x:Name="lblUnfocus" Text="-"/>
+                            <Label x:Name="lblTextchange" Text="-"/>
+                            <Label x:Name="lblComplete" Text="-"/>
+                        </StackLayout>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

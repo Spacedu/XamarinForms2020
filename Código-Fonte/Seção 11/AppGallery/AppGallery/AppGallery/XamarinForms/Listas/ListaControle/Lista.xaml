@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="ListView"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Listas.ListaControle.Lista">
+    <ContentPage.Content>
+        
+            
+            <ListView CachingStrategy="RecycleElement" SelectionMode="Single" ItemSelected="Lista01_ItemSelected" ItemTapped="Lista01_ItemTapped" IsPullToRefreshEnabled="True" Scrolled="Lista01_Scrolled" RefreshControlColor="Accent" Refreshing="Lista01_Refreshing" x:Name="Lista01" IsGroupingEnabled="True" VerticalScrollBarVisibility="Never" Footer="Rodapé" SeparatorVisibility="Default" SeparatorColor="LightGray" HasUnevenRows="True">
+                <ListView.Header>                    
+                    <StackLayout>
+                        <controls:TitleComponentView
+                            Name="ListView"
+                            Properties="ItemsSource, ItemTemplate, SeparatorVisibility, SeparatorColor, RowHeight, HasUnevenRows, Header, Footer, VerticalScrollBarVisibility, ContextAction, PullToRefresh, SelectionMode, SelectedItem, CachingStrategy"
+                            Methods="ScrollTo"
+                            Events="Scrolled, ItemSelected, ItemTapped"
+                        />
+                        <Label x:Name="LblScroll" Text="-" />
+                        <Button Text="Clique para ir na marca FORD" Clicked="MoverParaFordKa"/>
+                    </StackLayout>
+                </ListView.Header>
+
+                <ListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label BackgroundColor="#F2F2F2" Padding="17, 30" Text="{Binding Nome}" FontSize="20" FontAttributes="Bold" TextColor="Accent" />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.GroupHeaderTemplate>
+                
+                
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="Visualizar"
+                                      Clicked="MenuItem_Clicked"
+                                      CommandParameter="{Binding .}"
+                                      />
+                        </ViewCell.ContextActions>
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding Nome}" FontAttributes="Bold" FontSize="16" />
+                                <Label Text="{Binding Motorizacao}" FontAttributes="Italic" />
+                                <Label Text="{Binding Descricao}" FontAttributes="Italic" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                
+            </ListView>
+    </ContentPage.Content>
+</ContentPage>

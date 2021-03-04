@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="RadioButton"
+             Padding="10"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Controles.CaixaDeRadioControle.CaixaDeRadio">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ControlTemplate x:Key="RadioButtonTemplate">
+                <Frame CornerRadius="0" HasShadow="False" BorderColor="Black">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroupList>
+                            <VisualStateGroup x:Name="CheckedStates">
+                                <VisualState x:Name="Checked">
+                                    <VisualState.Setters>
+                                        <Setter Property="Background" Value="#FF7A53" />
+                                        <Setter Property="BorderColor" Value="#FF3A00" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Unchecked">
+                                    <VisualState.Setters>
+                                        <Setter Property="Background" Value="#White" />
+                                        <Setter Property="BorderColor" Value="Black" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateGroupList>
+                    </VisualStateManager.VisualStateGroups>
+                    <ContentPresenter />
+                </Frame>
+            </ControlTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+
+                <controls:SubtitleComponentView Properties="Content">
+                    <controls:SubtitleComponentView.Component>
+                        <StackLayout>
+                            <RadioButton IsChecked="True" ControlTemplate="{StaticResource RadioButtonTemplate}">
+                                <RadioButton.Content>
+                                    <StackLayout Orientation="Horizontal" Spacing="2">
+                                        <Label Text="R$ 50">
+                                            <VisualStateManager.VisualStateGroups>
+                                                <VisualStateGroupList>
+                                                    <VisualStateGroup x:Name="CheckedStates">
+                                                        <VisualState x:Name="Checked">
+                                                            <VisualState.Setters>
+                                                                <Setter Property="TextColor" Value="White" />
+                                                            </VisualState.Setters>
+                                                        </VisualState>
+                                                        <VisualState x:Name="Unchecked">
+                                                            <VisualState.Setters>
+                                                                <Setter Property="TextColor" Value="Black" />
+                                                            </VisualState.Setters>
+                                                        </VisualState>
+                                                    </VisualStateGroup>
+                                                </VisualStateGroupList>
+                                            </VisualStateManager.VisualStateGroups>
+                                        </Label>
+                                    </StackLayout>                                    
+                                </RadioButton.Content>
+                            </RadioButton>
+                            <RadioButton IsChecked="False" ControlTemplate="{StaticResource RadioButtonTemplate}" Content="R$ 100" />
+                            <RadioButton IsChecked="False" ControlTemplate="{StaticResource RadioButtonTemplate}" Content="R$ 200" />
+                        </StackLayout>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="IsChecked, Text, TextColor">
+                    <controls:SubtitleComponentView.Component>
+                        <StackLayout>
+                            <RadioButton IsChecked="True" Content="C#" TextColor="Blue" FontFamily="sans-serif-thin"/>
+                            <RadioButton IsChecked="False" Content="PHP" TextColor="Red" FontFamily="sans-serif-light"/>
+                            <RadioButton IsChecked="False" Content="Java" TextColor="Green"/>
+                        </StackLayout>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="GroupName" Events="CheckedChanged">
+                    <controls:SubtitleComponentView.Component>
+                        <StackLayout>
+                            <RadioButton Content="JavaScript" GroupName="Frontend" CheckedChanged="RadioButton_CheckedChanged"/>
+                            <RadioButton Content="SASS"  GroupName="Frontend" CheckedChanged="RadioButton_CheckedChanged"/>
+                            <RadioButton Content="HTML"  GroupName="Frontend" CheckedChanged="RadioButton_CheckedChanged"/>
+
+                            <Label x:Name="lblInformativo" />
+                        </StackLayout>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

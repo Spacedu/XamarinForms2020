@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="Switch"
+             Padding="10"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Controles.InterruptorControle.Interruptor">
+    <ContentPage.Content>
+        <StackLayout>
+            <controls:SubtitleComponentView Properties="IsToogled">
+                <controls:SubtitleComponentView.Component>
+                    <Switch HorizontalOptions="Start" IsToggled="True" />
+                </controls:SubtitleComponentView.Component>
+            </controls:SubtitleComponentView>
+
+            <controls:SubtitleComponentView Properties="OnColor, ThumbColor">
+                <controls:SubtitleComponentView.Component>
+                    <Switch HorizontalOptions="Start" OnColor="Green" ThumbColor="GreenYellow" />
+                </controls:SubtitleComponentView.Component>
+            </controls:SubtitleComponentView>
+
+            <controls:SubtitleComponentView Events="Toggled">
+                <controls:SubtitleComponentView.Component>
+                    <StackLayout>
+                        <Switch HorizontalOptions="Start" Toggled="Switch_Toggled" />
+                        <Label x:Name="lblInformativo" />
+                    </StackLayout>
+                </controls:SubtitleComponentView.Component>
+            </controls:SubtitleComponentView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

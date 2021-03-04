@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Pincéis (Brushes)"             
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             x:Class="AppGallery.XamarinForms.XF48XF50.Pinceis">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <controls:SubtitleComponentView Properties="Solid">
+                    <controls:SubtitleComponentView.Component>
+                        <BoxView WidthRequest="100" HeightRequest="100">
+                            <BoxView.Background>
+                                <SolidColorBrush Color="DarkGray" />
+                            </BoxView.Background>
+                        </BoxView>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="LinearGradient">
+                    <controls:SubtitleComponentView.Component>
+                        <BoxView WidthRequest="100" HorizontalOptions="FillAndExpand" HeightRequest="100">
+                            <BoxView.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                    <GradientStop Color="Green" Offset="0.5" />
+                                    <GradientStop Color="Red" Offset="0.6"/>
+                                    <GradientStop Color="DarkBlue" />
+                                </LinearGradientBrush>
+                            </BoxView.Background>
+                        </BoxView>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="RadialGradient">
+                    <controls:SubtitleComponentView.Component>
+                        <BoxView WidthRequest="100" HorizontalOptions="Center" HeightRequest="100">
+                            <BoxView.Background>
+                                <RadialGradientBrush Radius="1" Center="0, 0">
+                                    <GradientStop Color="Green" />
+                                    <GradientStop Color="Red" />
+                                    <GradientStop Color="DarkBlue" />
+                                </RadialGradientBrush>
+                            </BoxView.Background>
+                        </BoxView>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

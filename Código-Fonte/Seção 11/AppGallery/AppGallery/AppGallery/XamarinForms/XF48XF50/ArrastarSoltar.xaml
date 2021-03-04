@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Arrastar e soltar (DragAndDrop)"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             x:Class="AppGallery.XamarinForms.XF48XF50.ArrastarSoltar">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+            <controls:SubtitleComponentView Properties="Drag and Drop">
+                <controls:SubtitleComponentView.Component>
+                    <StackLayout Padding="10">
+                        <Label Text="Arraste e solte no quadrado o animal que você mais gosta:" />
+                        <Grid ColumnDefinitions="*,*,*" HeightRequest="100">
+                            <Frame BorderColor="Black">
+                                <Image Source="dog">
+                                    <Image.GestureRecognizers>
+                                        <DragGestureRecognizer CanDrag="True" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Frame>
+                            <Frame Grid.Column="1" BorderColor="Black">
+                                <Image Source="happy">
+                                    <Image.GestureRecognizers>
+                                        <DragGestureRecognizer CanDrag="True" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Frame>
+                            <Frame Grid.Column="2" BorderColor="Black">
+                                <Image Source="fish">
+                                    <Image.GestureRecognizers>
+                                        <DragGestureRecognizer CanDrag="True" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Frame>
+                        </Grid>
+
+                        <Label Text="Solte o elemento no quadrado:" />
+                        <Frame BorderColor="Black" HorizontalOptions="Center">
+                            <Image Source="" WidthRequest="100" HeightRequest="100">
+                                <Image.GestureRecognizers>
+                                    <DropGestureRecognizer AllowDrop="True" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </Frame>
+                    </StackLayout>
+                </controls:SubtitleComponentView.Component>
+            </controls:SubtitleComponentView>
+                <controls:SubtitleComponentView Properties="Drag and Drop">
+                    <controls:SubtitleComponentView.Component>
+                        <StackLayout>
+                        <Grid ColumnDefinitions="*,*" HeightRequest="100">
+                            <Frame BorderColor="Black">
+                                <Image Source="dog">
+                                    <Image.GestureRecognizers>
+                                        <DragGestureRecognizer DragStarting="DragGestureRecognizer_DragStartingDog" CanDrag="True" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Frame>
+                            <Frame Grid.Column="1" BorderColor="Black">
+                                <Image Source="happy">
+                                    <Image.GestureRecognizers>
+                                        <DragGestureRecognizer DragStarting="DragGestureRecognizer_DragStartingCat" CanDrag="True" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Frame>
+                        </Grid>
+                        <Frame BorderColor="Black" HorizontalOptions="Center">
+                                <Frame.GestureRecognizers>
+                                    <DropGestureRecognizer DragOver="DropGestureRecognizer_DragOver" Drop="DropGestureRecognizer_Drop" AllowDrop="True" />
+                                </Frame.GestureRecognizers>
+                                <Label x:Name="Carrinho" Text="Carrinho: 0 item - R$ 0,00" />
+                            </Frame>
+                        </StackLayout>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

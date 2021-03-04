@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="Material Design"
+             mc:Ignorable="d"
+             Visual="Material"
+             x:Class="AppGallery.XamarinForms.Estilos.MaterialDesign.Material">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <controls:TitleComponentView Name="Material Design" />
+
+                <Frame Margin="10">
+                    <StackLayout>
+                        <Button Text="Botão" />
+                        <CheckBox />
+                        <Entry Placeholder="Entry"/>
+                        <Editor Placeholder="Editor"/>
+                        <DatePicker />
+                        <TimePicker />
+                        <Picker Title="Picker" />
+                        <ProgressBar Progress=".5" />
+                        <ActivityIndicator IsRunning="True" />
+                        <Stepper />
+                        <Slider Minimum="0" Maximum="5" Value="3" />
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

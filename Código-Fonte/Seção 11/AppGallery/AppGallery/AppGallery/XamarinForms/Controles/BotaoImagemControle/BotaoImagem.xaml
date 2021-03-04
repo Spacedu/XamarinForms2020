@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="ImageButton"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Controles.BotaoImagemControle.BotaoImagem">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10">
+                <controls:SubtitleComponentView Properties="Source, BorderWidth, BorderColor">
+                    <controls:SubtitleComponentView.Component>
+                        <ImageButton 
+                            HorizontalOptions="Center"
+                            Padding="5"
+                            Source="plane.png"
+                            BackgroundColor="White"
+                            BorderWidth="2"
+                            BorderColor="Black"
+                        />
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="Aspect">
+                    <controls:SubtitleComponentView.Component>
+                        <ImageButton 
+                            HorizontalOptions="Center"
+                            WidthRequest="200"
+                            HeightRequest="140"
+                            Aspect="AspectFit"
+                            Source="plane.png"
+                            BackgroundColor="White"
+                            BorderWidth="2"
+                            BorderColor="Black"
+                        />
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Events="Pressed, Released, Clicked">
+                    <controls:SubtitleComponentView.Component>
+                        <StackLayout>
+                            <ImageButton
+                                HorizontalOptions="Center"
+                                Source="plane.png"
+                                BackgroundColor="White"
+                                BorderWidth="2"
+                                BorderColor="Black"
+                
+                                Pressed="Pressionado" 
+                                Released="Liberado"
+                                Clicked="Clicado"
+                            />
+
+                            <Label Text="-" x:Name="LblPressionado" />
+                            <Label Text="-" x:Name="LblLiberado" />
+                            <Label Text="-" x:Name="LblClicado" />
+                        </StackLayout>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

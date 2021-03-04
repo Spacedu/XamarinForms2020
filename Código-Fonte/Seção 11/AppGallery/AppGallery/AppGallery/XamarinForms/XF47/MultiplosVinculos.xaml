@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Multi-bindings"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             x:Class="AppGallery.XamarinForms.XF47.MultiplosVinculos">
+    <ContentPage.Content>
+        <StackLayout>
+            <controls:TitleComponentView Name="Label" Properties="Text: Multi-bingins" />
+            <Label>
+                <Label.Text>
+                    <MultiBinding StringFormat="Olá - {0}! Sua data de nascimento é: {1:dd/MM/yyyy}?">
+                        <Binding Path="Nome" />
+                        <Binding Path="DataNascimento" />
+                    </MultiBinding>
+                </Label.Text>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

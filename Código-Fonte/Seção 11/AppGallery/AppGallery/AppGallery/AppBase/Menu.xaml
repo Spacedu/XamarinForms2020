@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:AppGallery.AppBase"
+             xmlns:viewmodel="clr-namespace:AppGallery.AppBase.ViewModels"
+             mc:Ignorable="d"
+             x:Class="AppGallery.AppBase.Menu">
+    <FlyoutPage.Flyout>
+        <ContentPage Title="Menu" Style="{DynamicResource PageMenu}">
+
+            <ContentPage.BindingContext>
+                <viewmodel:MenuViewModel />
+            </ContentPage.BindingContext>
+            <CollectionView ItemsSource="{Binding MenuItens}" ItemTemplate="{StaticResource PageListDataTemplate}" IsGrouped="True">
+                <CollectionView.Header>
+                    <StackLayout>
+                        <StackLayout Padding="30" BackgroundColor="{AppThemeBinding Light={StaticResource LogoBackgroundColorLight}, Dark={StaticResource LogoBackgroundColorDark}}">
+                            <Image Style="{DynamicResource Logomarca}"/>
+                            <Label HorizontalTextAlignment="Center" StyleClass="FontSmall" Text="Xamarin Forms &#x0a;Gallery" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="10, 10, 5, 5">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="AbrirPaginaFixa" CommandParameter="Inicio" />
+                            </StackLayout.GestureRecognizers>
+                            <Image Style="{DynamicResource IconHome}" />
+                            <Label Text="Início" Margin="7, 0" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="10, 10, 5, 5">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="AbrirPaginaFixa" CommandParameter="Creditos" />
+                            </StackLayout.GestureRecognizers>
+                            <Image Style="{DynamicResource IconHeart}" />
+                            <Label Text="Créditos" Margin="7, 0" />
+                        </StackLayout>
+                    </StackLayout>
+                </CollectionView.Header>
+                <CollectionView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding Nome}" Style="{DynamicResource GroupTitle}" />
+                    </DataTemplate>
+                </CollectionView.GroupHeaderTemplate>
+            </CollectionView>
+        </ContentPage>
+    </FlyoutPage.Flyout>
+    <FlyoutPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <local:Inicio />
+            </x:Arguments>            
+        </NavigationPage>        
+    </FlyoutPage.Detail>
+</FlyoutPage>

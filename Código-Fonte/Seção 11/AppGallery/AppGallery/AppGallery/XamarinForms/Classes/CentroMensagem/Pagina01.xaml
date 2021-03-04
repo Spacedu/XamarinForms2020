@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="MessagingCenter"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Classes.CentroMensagem.Pagina01">
+    <ContentPage.Content>
+        <StackLayout>
+            <controls:TitleComponentView Name="MessagingCenter" />
+            <Button Text="Cadastrar" Clicked="BtnCadastrar" />
+            <ListView x:Name="Lista01">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Nome}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

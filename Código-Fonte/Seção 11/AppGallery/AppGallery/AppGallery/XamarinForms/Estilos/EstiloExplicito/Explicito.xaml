@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="ExplicitStyle"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Estilos.EstiloExplicito.Explicito">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="EstiloParaBotao" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Accent" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="Margin" Value="10" />  
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+
+            <controls:TitleComponentView Name="ExplicitStyle"
+                                         Observation="Vantagem: Padronização (Android, iOS, UWP), Reutilização (Produção), Manutenção" 
+                                         />
+            
+
+            <Button Text="Botão 01" Style="{StaticResource EstiloParaBotao}" BackgroundColor="Black"/>
+            <Button Text="Botão 02" Style="{StaticResource EstiloParaBotao}" />
+            <Button Text="Botão 03" Style="{StaticResource EstiloParaBotao}" />
+
+            <StackLayout Orientation="Horizontal">
+
+                <StackLayout.Resources>
+                    <ResourceDictionary>
+                        <Style x:Key="EstiloParaBotao" TargetType="Button">
+                            <Setter Property="BackgroundColor" Value="Green" />
+                            <Setter Property="Margin" Value="10" />
+                            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                        </Style>
+                    </ResourceDictionary>
+                </StackLayout.Resources>
+                
+                <Button Text="Botão 04" Style="{StaticResource EstiloParaBotao}" />
+                <Button Text="Botão 05" Style="{StaticResource EstiloParaBotao}" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

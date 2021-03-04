@@ -1,0 +1,10 @@
+drawable-mdpi/show_password.png;drawable-mdpi/show_password.png
+drawable-hdpi/show_password.png;drawable-hdpi/show_password.png
+drawable-xhdpi/show_password.png;drawable-xhdpi/show_password.png
+drawable-xxhdpi/show_password.png;drawable-xxhdpi/show_password.png
+drawable-xxxhdpi/show_password.png;drawable-xxxhdpi/show_password.png
+drawable-mdpi/hide_password.png;drawable-mdpi/hide_password.png
+drawable-hdpi/hide_password.png;drawable-hdpi/hide_password.png
+drawable-xhdpi/hide_password.png;drawable-xhdpi/hide_password.png
+drawable-xxhdpi/hide_password.png;drawable-xxhdpi/hide_password.png
+drawable-xxxhdpi/hide_password.png;drawable-xxxhdpi/hide_password.png

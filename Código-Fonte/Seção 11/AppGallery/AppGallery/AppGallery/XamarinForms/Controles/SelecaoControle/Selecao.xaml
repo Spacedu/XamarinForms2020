@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="Picker"
+             Padding="10"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Controles.SelecaoControle.Selecao">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <controls:SubtitleComponentView Properties="Items, Title, TitleColor">
+                    <controls:SubtitleComponentView.Component>
+                        <Picker Title="Selecione a marca" TitleColor="Blue">
+                            <Picker.Items>
+                                <x:String>FIAT</x:String>
+                                <x:String>FORD</x:String>
+                                <x:String>VW</x:String>
+                                <x:String>CHEVROLET</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="FontFamily, FontSize, FontAttributes, CharacterSpacing">
+                    <controls:SubtitleComponentView.Component>
+                        <Picker Title="MARCA" CharacterSpacing="5" FontFamily="sans-serif-thin" FontSize="24" FontAttributes="Italic">
+                            <Picker.Items>
+                                <x:String>FIAT</x:String>
+                                <x:String>FORD</x:String>
+                                <x:String>VW</x:String>
+                                <x:String>CHEVROLET</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Events="SelectedIndexChanged">
+                    <controls:SubtitleComponentView.Component>
+                        <StackLayout>
+                            <Picker x:Name="PickerMarca" Title="MARCA" SelectedIndexChanged="Picker_SelectedIndexChanged">
+                                <Picker.Items>
+                                    <x:String>FIAT</x:String>
+                                    <x:String>FORD</x:String>
+                                    <x:String>VW</x:String>
+                                    <x:String>CHEVROLET</x:String>
+                                </Picker.Items>
+                            </Picker>
+
+                            <Label x:Name="LblInformativo" />
+                            <Button Text="(Dica)Limpar Marca" Clicked="LimparPickerMarca" />
+                        </StackLayout>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

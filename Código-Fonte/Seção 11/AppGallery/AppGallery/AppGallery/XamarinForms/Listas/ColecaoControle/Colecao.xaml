@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="CollectionView"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Listas.ColecaoControle.Colecao">
+    <ContentPage.Content>
+        <StackLayout>
+            <controls:TitleComponentView
+                Name="CollectionView"
+                Properties="ItemsSource, ItemsTemplate, Header, Footer, EmptyView, ItemsLayout(LinearItemsLayout, GridItemsLayout), IsGrouped, RemainingItemsThreshold(InfinityScroll), ItemSizingStrategy"
+                Events="SelectionChanged, RemainingItemsThresholdReached"
+                />
+
+            <Label Text="-" x:Name="LblSelecao" />
+
+            <CollectionView SelectionMode="Multiple" SelectionChanged="Colecao01_SelectionChanged" ItemSizingStrategy="MeasureAllItems" x:Name="Colecao01" IsGrouped="True" RemainingItemsThreshold="4" RemainingItemsThresholdReached="Colecao01_RemainingItemsThresholdReached">
+                <CollectionView.GroupFooterTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal">
+                            <BoxView HeightRequest="2" VerticalOptions="Start" Color="Gray" HorizontalOptions="FillAndExpand" />
+                            <!--
+                                <Label Text="Fim: " Padding="10" TextColor="Red" />
+                                <Label Text="{Binding Nome}" Padding="10" TextColor="Red" />
+                            -->
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.GroupFooterTemplate>
+                <CollectionView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding Nome}" TextColor="Red" Padding="10" />
+                    </DataTemplate>
+                </CollectionView.GroupHeaderTemplate>
+                <CollectionView.EmptyView>
+                    <Label Text="Nenhum registro!" Padding="10" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" BackgroundColor="#FF8080" FontAttributes="Bold" />
+                </CollectionView.EmptyView>
+                <CollectionView.Header>
+                    <Label Text="Cabeçalho" Padding="10" TextColor="Black" HorizontalTextAlignment="Center" BackgroundColor="LightGray" FontAttributes="Bold" />
+                </CollectionView.Header>
+                <CollectionView.Footer>
+                    <Label Text="Rodapé" Padding="10" TextColor="Black" HorizontalTextAlignment="Center" BackgroundColor="LightGray" FontAttributes="Bold" />
+                </CollectionView.Footer>
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="1" VerticalItemSpacing="1" HorizontalItemSpacing="1"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="#F2F2F2" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="Selected">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="#FFB1E5FF" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            
+                            
+                            <Label Text="{Binding Nome}" TextColor="Black" />
+                            <Label Text="{Binding QuantidadeDeFranquias}" TextColor="Gray" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

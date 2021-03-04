@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    Shell.NavBarIsVisible="True"
+    Shell.NavBarHasShadow="False"
+    Shell.TabBarIsVisible="True"
+    Title="Cachorro" 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="AppGallery.XamarinForms.Concha.Hamburgue.Paginas.Cachorro">
+    <Shell.TitleView>
+        <Label Text="Alteramos a TitleView" VerticalTextAlignment="Center" TextColor="#707070" />
+    </Shell.TitleView>
+    
+    <ContentPage.Content>
+        <StackLayout>
+
+
+            <ListView x:Name="ListViewCachorro" ItemTapped="ListViewCachorro_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Margin="10">
+                                <Label.Text>
+                                    <MultiBinding StringFormat="{} {0} - {1} idade">
+                                        <Binding Path="Nome" />
+                                        <Binding Path="Idade" />
+                                    </MultiBinding>
+                                </Label.Text>
+                            </Label>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Abrir Página de Detalhe" Clicked="AbrirCachorroDetalhe" />
+
+            <Button Text="Abrir Página do Gato" Clicked="AbrirGato" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

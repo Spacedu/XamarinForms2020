@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:AppGallery.XamarinForms.Paginas.PaginaDeMenuLateral"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Paginas.PaginaDeMenuLateral.MenuLateral">
+    <!-- Menu -->
+    <FlyoutPage.Flyout>
+        <ContentPage Title="Menu">
+            <StackLayout>
+                <Button Text="Página 01" Clicked="AbrirPagina01" HorizontalOptions="Start" BackgroundColor="Transparent" />
+                <Button Text="Página 02" Clicked="AbrirPagina02" HorizontalOptions="Start" BackgroundColor="Transparent" />
+                <Button Text="Página 03" Clicked="AbrirPagina03" HorizontalOptions="Start" BackgroundColor="Transparent" />
+            </StackLayout>
+        </ContentPage>
+    </FlyoutPage.Flyout>
+    
+    <!-- Conteúdo -->
+    <FlyoutPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <local:Conteudo01 />
+            </x:Arguments>
+        </NavigationPage>        
+    </FlyoutPage.Detail>
+</FlyoutPage>

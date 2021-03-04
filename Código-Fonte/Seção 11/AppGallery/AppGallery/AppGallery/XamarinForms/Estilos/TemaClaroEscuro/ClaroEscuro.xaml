@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="Light/Dark Theme(Mode)"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Estilos.TemaClaroEscuro.ClaroEscuro">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="CorFundoLight">White</Color>
+            <Color x:Key="CorFundoDark">Black</Color>
+
+            <Color x:Key="CorTextoLight">Black</Color>
+            <Color x:Key="CorTextoDark">White</Color>
+
+            <Color x:Key="FrameBordaLight">Black</Color>
+            <Color x:Key="FrameBordaDark">#333333</Color>
+
+            <Color x:Key="FrameCorFundoLight">White</Color>
+            <Color x:Key="FrameCorFundoDark">#333333</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="{AppThemeBinding Light={StaticResource CorFundoLight}, Dark={StaticResource CorFundoDark}}">
+            <controls:TitleComponentView Name="Light/Dark Theme" />
+
+            <Label Text="{AppThemeBinding Light=Light, Dark=Dark}" TextColor="{AppThemeBinding Light={StaticResource CorTextoLight}, Dark={StaticResource CorTextoDark}}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="{AppThemeBinding Light=(claro), Dark=(escuro)}" TextColor="{AppThemeBinding Light={StaticResource CorTextoLight}, Dark={StaticResource CorTextoDark}}"  HorizontalOptions="CenterAndExpand" FontSize="10"/>
+
+            <Frame Margin="0, 80, 0, 0" WidthRequest="150" HeightRequest="150" HorizontalOptions="Center"
+                   BorderColor="{AppThemeBinding Light={StaticResource FrameBordaLight}, Dark={StaticResource FrameBordaDark}}" 
+                   BackgroundColor="{AppThemeBinding Light={StaticResource FrameCorFundoLight}, Dark={StaticResource FrameCorFundoDark}}" >
+                <Label Text="A" FontAttributes="{AppThemeBinding Light=Bold, Dark=Italic}" FontSize="100" HorizontalTextAlignment="Center" TextColor="{AppThemeBinding Light={StaticResource CorTextoLight}, Dark={StaticResource CorTextoDark}}" />
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

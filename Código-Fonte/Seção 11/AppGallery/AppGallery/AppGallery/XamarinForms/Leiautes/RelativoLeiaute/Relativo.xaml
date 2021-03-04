@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             Title="RelativeLayout"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Leiautes.RelativoLeiaute.Relativo">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <BoxView x:Name="BackgroundX" BackgroundColor="Gray" HeightRequest="150" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
+
+            <BoxView BackgroundColor="Black" WidthRequest="70" HeightRequest="70"
+                     RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=Background, Property=Width, Factor=0.5,Constant=-35}"
+                     RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=Background, Property=Y, Factor=1, Constant=115}"
+                     />
+
+            <BoxView x:Name="Quadrado" BackgroundColor="Black" WidthRequest="100" HeightRequest="100"
+                     RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-50}"
+                     RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5, Constant=-50}"
+                     />
+
+            <BoxView BackgroundColor="Purple"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToView, ElementName=Quadrado, Property=Width, Factor=0.5}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView, ElementName=Quadrado, Property=Height, Factor=0.5}"
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=Quadrado, Property=X, Constant=-25}"
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=Quadrado, Property=Y, Constant=-25}"
+                />
+
+            <BoxView BackgroundColor="Purple"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToView, ElementName=Quadrado, Property=Width, Factor=0.5}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView, ElementName=Quadrado, Property=Height, Factor=0.5}"
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=Quadrado, Property=X, Constant=75}"
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=Quadrado, Property=Y, Constant=-25}"
+                />
+
+            <BoxView BackgroundColor="Red"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToView, ElementName=Quadrado, Property=Width, Factor=0.15}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView, ElementName=Quadrado, Property=Height, Factor=0.15}"
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=Quadrado, Property=X, Constant=45}"
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=Quadrado, Property=Y, Constant=40}"
+                />
+
+            <BoxView BackgroundColor="Green"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToView, ElementName=Quadrado, Property=Width, Factor=0.75}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView, ElementName=Quadrado, Property=Height, Factor=0.07}"
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=Quadrado, Property=X, Constant=12.5}"
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=Quadrado, Property=Y, Constant=75}"
+                />
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

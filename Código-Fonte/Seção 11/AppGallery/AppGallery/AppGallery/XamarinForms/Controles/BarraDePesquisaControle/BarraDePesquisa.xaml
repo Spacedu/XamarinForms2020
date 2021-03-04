@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="SearchBar"
+             mc:Ignorable="d"
+             x:Class="AppGallery.XamarinForms.Controles.BarraDePesquisaControle.BarraDePesquisa">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <controls:SubtitleComponentView Properties="Text">
+                    <controls:SubtitleComponentView.Component>
+                        <SearchBar Text="Pesquisando carros..." TextColor="Blue" />
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="Placeholder, PlaceholderColor">
+                    <controls:SubtitleComponentView.Component>
+                        <SearchBar Placeholder="Digite a palavra que deseja pesquisar..." PlaceholderColor="LightBlue" />
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="FontFamily, FontSize, FontAttributes, CharacterSpacing">
+                    <controls:SubtitleComponentView.Component>
+                        <SearchBar FontFamily="sans-serif-light" FontSize="18" FontAttributes="Italic" CharacterSpacing="2"/>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Properties="CancelButtonColor">
+                    <controls:SubtitleComponentView>
+                        <SearchBar CancelButtonColor="Blue" />
+                    </controls:SubtitleComponentView>
+                </controls:SubtitleComponentView>
+
+                <controls:SubtitleComponentView Events="TextChanged, SearchButtonPressed">
+                    <controls:SubtitleComponentView.Component>
+                        <StackLayout>
+                            <SearchBar TextChanged="SearchBar_TextChanged" SearchButtonPressed="SearchBar_SearchButtonPressed"/>
+                            <Label x:Name="lblTextChanged" Text="-" />
+                            <Label x:Name="lblSearchButtonPressed" Text="-" />
+                        </StackLayout>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
