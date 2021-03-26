@@ -1,1 +1,0 @@
-C:\Dev\AppTarefa\AppTarefa\AppTarefa.UWP\AppTarefa.UWP.csproj;x86

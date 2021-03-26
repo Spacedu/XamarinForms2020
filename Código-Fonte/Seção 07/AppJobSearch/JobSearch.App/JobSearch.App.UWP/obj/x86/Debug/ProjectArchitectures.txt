@@ -1,1 +1,0 @@
-C:\Dev\AppJobSearch\JobSearch.App\JobSearch.App.UWP\JobSearch.App.UWP.csproj;x86

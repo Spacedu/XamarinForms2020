@@ -1,1 +1,0 @@
-<resources><!-- Material Progress Bars --><style name="XamarinFormsMaterialProgressBarCircular" parent="Widget.AppCompat.ProgressBar"><item name="android:background">@drawable/materialactivityindicatorbackground</item></style></resources>
