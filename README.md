@@ -27,4 +27,4 @@ __· Projetos desenvolvidos:__
 
 ·· App - Job Search + API.
 
-Obs.: Alguns assuntos serão abordados futuramente como MVVM + Shell, no projeto seguinte: App - Shopping.
+·· App - Shopping (Shell + MVVM).
